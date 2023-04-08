@@ -2,14 +2,16 @@ import {GetStaticPaths, GetStaticProps} from 'next';
 import Link from 'next/link';
 import {useRouter} from 'next/router';
 import {Recipe} from '../../interfaces/Recipe';
-import {getAllRecipes} from '../../lib/recipes';
+import {getAllRecipes, getRecipesByCategory} from '../../lib/recipes';
 import slugify from "slugify";
 
 interface CategoryPageProps {
     recipes: Recipe[];
+    categoryName: string;
+
 }
 
-export default function CategoryPage({recipes}: CategoryPageProps) {
+export default function CategoryPage({recipes, categoryName}: CategoryPageProps) {
     const router = useRouter();
 
     if (router.isFallback) {
@@ -18,7 +20,7 @@ export default function CategoryPage({recipes}: CategoryPageProps) {
 
     return (
         <div>
-            <h1>Recipes in {router.query.category} category</h1>
+            <h1>Recipes in {categoryName} category</h1>
             {recipes.map((recipe) => (
                 <div key={recipe.id}>
                     <h2>
@@ -40,8 +42,9 @@ export default function CategoryPage({recipes}: CategoryPageProps) {
 export const getStaticPaths: GetStaticPaths = async () => {
     const recipes = getAllRecipes();
 
-    const paths = recipes.map((recipe) => ({
-        params: { category: encodeURIComponent(recipe.category), slug: encodeURIComponent(slugify(recipe.title, { lower: true })) },
+    const categories = new Set(recipes.map((recipe) => recipe.category));
+    const paths = Array.from(categories).map((category) => ({
+        params: {slugifiedCategory: encodeURIComponent(slugify(category, {lower: true}))},
     }));
 
     return {
@@ -49,16 +52,15 @@ export const getStaticPaths: GetStaticPaths = async () => {
         fallback: false,
     };
 };
-
-
 export const getStaticProps: GetStaticProps = async (context) => {
-    const {category} = context.params!;
-    const allRecipes = getAllRecipes();
-    const recipes = allRecipes.filter((recipe) => recipe.category === category);
+    const {slugifiedCategory} = context.params!;
+    const decodedCategory = decodeURIComponent(slugifiedCategory as string);
+    const recipes = getRecipesByCategory(decodedCategory);
 
     return {
         props: {
             recipes,
+            categoryName: decodedCategory,
         },
     };
 };

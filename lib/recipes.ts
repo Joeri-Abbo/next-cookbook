@@ -29,12 +29,20 @@ export function getAllRecipes(): Recipe[] {
     });
 }
 
-export function getRecipeBySlug(slug: string): Recipe {
+export function getRecipeBySlug(category: string, slug: string): Recipe | null {
     const allRecipes = getAllRecipes();
-    const recipe = allRecipes.find((recipe) => slugify(recipe.title, {lower: true}) === slug);
-    if (!recipe) {
-        throw new Error(`Cannot find recipe with slug '${slug}'`);
-    }
-    return recipe;
+    const recipe = allRecipes.find(
+        (recipe) =>
+            recipe.category === category &&
+            slugify(recipe.title, {lower: true}) === slug
+    );
+    return recipe || null;
 }
 
+
+export function getRecipesByCategory(slugifiedCategory: string): Recipe[] {
+    const allRecipes = getAllRecipes();
+    return allRecipes.filter(
+        (recipe) => slugify(recipe.category, {lower: true}) === slugifiedCategory
+    );
+}

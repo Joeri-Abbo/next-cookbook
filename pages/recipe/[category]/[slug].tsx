@@ -6,9 +6,11 @@ import slugify from 'slugify';
 
 interface RecipeDetailPageProps {
     recipe: Recipe;
+    categoryName: string;
+
 }
 
-export default function RecipeDetailPage({recipe}: RecipeDetailPageProps) {
+export default function RecipeDetailPage({recipe, categoryName}: RecipeDetailPageProps) {
     const router = useRouter();
 
     if (router.isFallback) {
@@ -18,6 +20,8 @@ export default function RecipeDetailPage({recipe}: RecipeDetailPageProps) {
     return (
         <div>
             <h1>{recipe.title}</h1>
+            <h2>Category: {categoryName}</h2>
+
             {/* Add more recipe details and styling */}
         </div>
     );
@@ -27,7 +31,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
     const recipes = getAllRecipes();
 
     const paths = recipes.map((recipe) => ({
-        params: {category: recipe.category, slug: slugify(recipe.title, {lower: true})},
+        params: {
+            category: encodeURIComponent(recipe.category),
+            slug: encodeURIComponent(slugify(recipe.title, {lower: true})),
+        },
     }));
 
     return {
@@ -36,13 +43,22 @@ export const getStaticPaths: GetStaticPaths = async () => {
     };
 };
 
+
 export const getStaticProps: GetStaticProps = async (context) => {
-    const {slug} = context.params!;
-    const recipe = getRecipeBySlug(slug as string);
+    const {category, slug} = context.params!;
+    const decodedCategory = decodeURIComponent(category as string);
+    const recipe = getRecipeBySlug(decodedCategory, slug as string);
+
+    if (!recipe) {
+        return {
+            notFound: true,
+        };
+    }
 
     return {
         props: {
             recipe,
+            categoryName: decodedCategory,
         },
     };
 };
