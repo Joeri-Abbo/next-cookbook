@@ -1,13 +1,29 @@
-import Link from 'next/link'
-import Layout from '../components/Layout'
+import {GetStaticProps} from 'next';
+import {Recipe} from '../interfaces/Recipe';
+import {getAllRecipes} from '../lib/recipes';
 
-const IndexPage = () => (
-    <Layout title="Home | Next.js + TypeScript Example">
-        <h1>Hello Next.js 👋</h1>
-        <p>
-            <Link href="/about">About</Link>
-        </p>
-    </Layout>
-)
+interface HomeProps {
+    recipes: Recipe[];
+}
 
-export default IndexPage
+export default function Home({recipes}: HomeProps) {
+    return (
+        <div>
+            {recipes.map((recipe) => (
+                <div key={recipe.id}>
+                    <h2>{recipe.title}</h2>
+                    {/* Add more recipe details and styling */}
+                </div>
+            ))}
+        </div>
+    );
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+    const recipes = getAllRecipes();
+    return {
+        props: {
+            recipes,
+        },
+    };
+};
