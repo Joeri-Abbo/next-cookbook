@@ -23,6 +23,11 @@ export default function RecipeDetailPage({recipe, categoryName}: RecipeDetailPag
             <h2>Category: {categoryName}</h2>
             <h3>Type: {recipe.type}</h3>
 
+            {recipe.tags && recipe.tags.map((tag) => (
+                <div key={tag}>
+                    <span>{tag}</span>
+                </div>
+            ))}
             {/* Add more recipe details and styling */}
         </div>
     );
