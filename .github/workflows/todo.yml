@@ -1,0 +1,16 @@
+name: Create issues from todos
+on:
+  workflow_call:
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run tdg-github-action
+        uses: ribtoks/tdg-github-action@master
+        with:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          SHA: ${{ github.sha }}
+          REF: ${{ github.ref }}}
+          LABEL: "TODO"
