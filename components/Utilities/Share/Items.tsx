@@ -4,6 +4,7 @@ import Facebook from "./Facebook";
 import Mail from "./Mail";
 import Pintrest from "./Pintrest";
 import Twitter from "./Twitter";
+import Download from "./Download";
 
 type Props = {
     asPath: string
@@ -16,6 +17,7 @@ const Items = ({asPath, text}: Props) => (
         <Mail asPath={asPath}/>
         <Pintrest asPath={asPath}/>
         <Twitter asPath={asPath} text={text}/>
+        <Download asPath={asPath} text={text}/>
     </>
 )
 

@@ -10,9 +10,9 @@ interface RecipeFormProps {
 const RecipeForm: React.FC<RecipeFormProps> = ({onSubmit, initialData}) => {
     const [title, setTitle] = useState('');
     const [category, setCategory] = useState('');
-    const [ingredients, setIngredients] = useState('');
-    const [instructions, setInstructions] = useState('');
-    const [tags, setTags] = useState('');
+    const [ingredients, setIngredients] = useState<string[]>(['']);
+    const [instructions, setInstructions] = useState<string[]>(['']);
+    const [tags, setTags] = useState<string[]>(['']);
     const [imageUrl, setImageUrl] = useState('');
     const [type, setType] = useState('');
 
@@ -20,14 +20,60 @@ const RecipeForm: React.FC<RecipeFormProps> = ({onSubmit, initialData}) => {
         if (initialData) {
             setTitle(initialData.title);
             setCategory(initialData.category);
-            setIngredients(initialData.ingredients.join(', '));
-            setInstructions(initialData.instructions.join(', '));
-            setTags(initialData.tags ? initialData.tags.join(', ') : '');
+            setIngredients(initialData.ingredients ? initialData.ingredients : []);
+            setInstructions(initialData.instructions ? initialData.instructions : []);
+            setTags(initialData.tags ? initialData.tags : []);
             setImageUrl(initialData.imageUrl);
             setType(initialData.type);
         }
     }, [initialData]);
+    const handleAddInstruction = () => {
+        setInstructions([...instructions, '']);
+    };
 
+    const handleInstructionChange = (index: number, value: string) => {
+        const newInstructions = [...instructions];
+        newInstructions[index] = value;
+        setIngredients(newInstructions);
+    };
+
+    const handleRemoveInstruction = (index: number) => {
+        const newInstructions = [...instructions];
+        newInstructions.splice(index, 1);
+        setInstructions(newInstructions);
+    };
+
+    const handleAddIngredient = () => {
+        setIngredients([...ingredients, '']);
+    };
+
+    const handleIngredientChange = (index: number, value: string) => {
+        const newIngredients = [...ingredients];
+        newIngredients[index] = value;
+        setIngredients(newIngredients);
+    };
+
+    const handleRemoveIngredient = (index: number) => {
+        const newIngredients = [...ingredients];
+        newIngredients.splice(index, 1);
+        setIngredients(newIngredients);
+    };
+
+    const handleAddTag = () => {
+        setTags([...tags, '']);
+    };
+
+    const handleTagChange = (index: number, value: string) => {
+        const newTags = [...tags];
+        newTags[index] = value;
+        setTags(newTags);
+    };
+
+    const handleRemoveTag = (index: number) => {
+        const newTags = [...tags];
+        newTags.splice(index, 1);
+        setTags(newTags);
+    };
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
@@ -35,9 +81,9 @@ const RecipeForm: React.FC<RecipeFormProps> = ({onSubmit, initialData}) => {
             id: initialData?.id || Date.now(),
             title,
             category,
-            ingredients: ingredients.split(',').map((item) => item.trim()),
-            instructions: instructions.split(',').map((item) => item.trim()),
-            tags: tags ? tags.split(',').map((item) => item.trim()) : null,
+            ingredients: ingredients.map((item) => item.trim()),
+            instructions: instructions.map((item) => item.trim()),
+            tags: tags ? tags.map((item) => item.trim()) : null,
             imageUrl,
             type,
         };
@@ -62,9 +108,9 @@ const RecipeForm: React.FC<RecipeFormProps> = ({onSubmit, initialData}) => {
 
         setTitle('');
         setCategory('');
-        setIngredients('');
-        setInstructions('');
-        setTags('');
+        setIngredients([]);
+        setInstructions([]);
+        setTags([]);
         setImageUrl('');
         setType('');
     };
@@ -88,33 +134,65 @@ const RecipeForm: React.FC<RecipeFormProps> = ({onSubmit, initialData}) => {
                     className="w-full p-2 mt-1 border border-gray-300 rounded-md"
                 />
             </label>
-            <label>
-                Ingredients (comma-separated):
-                <input
-                    type="text"
-                    value={ingredients}
-                    onChange={(e) => setIngredients(e.target.value)}
-                    className="w-full p-2 mt-1 border border-gray-300 rounded-md"
-                />
-            </label>
-            <label>
-                Instructions (comma-separated):
-                <input
-                    type="text"
-                    value={instructions}
-                    onChange={(e) => setInstructions(e.target.value)}
-                    className="w-full p-2 mt-1 border border-gray-300 rounded-md"
-                />
-            </label>
-            <label>
-                Tags (comma-separated):
-                <input
-                    type="text"
-                    value={tags}
-                    onChange={(e) => setTags(e.target.value)}
-                    className="w-full p-2 mt-1 border border-gray-300 rounded-md"
-                />
-            </label>
+
+            <div>
+                <label>Instructions:</label>
+                {instructions.map((instruction, index) => (
+                    <div key={index} className="flex space-x-2">
+                        <input
+                            type="text"
+                            value={instruction}
+                            onChange={(e) => handleInstructionChange(index, e.target.value)}
+                            className="w-full p-2 mt-1 border border-gray-300 rounded-md"
+                        />
+                        <button type="button" onClick={() => handleRemoveInstruction(index)}>
+                            Remove
+                        </button>
+                    </div>
+                ))}
+                <button type="button" onClick={handleAddInstruction}>
+                    Add instruction
+                </button>
+            </div>
+            <div>
+                <label>Ingredients:</label>
+                {ingredients.map((ingredient, index) => (
+                    <div key={index} className="flex space-x-2">
+                        <input
+                            type="text"
+                            value={ingredient}
+                            onChange={(e) => handleIngredientChange(index, e.target.value)}
+                            className="w-full p-2 mt-1 border border-gray-300 rounded-md"
+                        />
+                        <button type="button" onClick={() => handleRemoveIngredient(index)}>
+                            Remove
+                        </button>
+                    </div>
+                ))}
+                <button type="button" onClick={handleAddIngredient}>
+                    Add Ingredient
+                </button>
+            </div>
+
+            <div>
+                <label>Tags:</label>
+                {tags.map((tag, index) => (
+                    <div key={index} className="flex space-x-2">
+                        <input
+                            type="text"
+                            value={tag}
+                            onChange={(e) => handleTagChange(index, e.target.value)}
+                            className="w-full p-2 mt-1 border border-gray-300 rounded-md"
+                        />
+                        <button type="button" onClick={() => handleRemoveTag(index)}>
+                            Remove
+                        </button>
+                    </div>
+                ))}
+                <button type="button" onClick={handleAddTag}>
+                    Add Tag
+                </button>
+            </div>
             <label>
                 Image URL:
                 <input
