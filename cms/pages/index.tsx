@@ -1,4 +1,3 @@
-// pages/index.tsx
 import type { NextPage } from 'next';
 import { useState, useEffect } from 'react';
 import RecipeForm from '../components/RecipeForm';
@@ -41,7 +40,7 @@ const Home: NextPage = () => {
             <h1 className="text-2xl font-bold mb-4">Recipes</h1>
             <RecipeForm onSubmit={addRecipe} />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
-                {recipes.map((recipe) => (
+                {recipes.length > 0 && recipes.map((recipe) => (
                     <RecipeItem
                         key={recipe.id}
                         recipe={recipe}

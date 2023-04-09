@@ -1,5 +1,4 @@
-// components/RecipeForm.tsx
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {Recipe} from '../../interfaces/Recipe';
 
 interface RecipeFormProps {
@@ -8,25 +7,13 @@ interface RecipeFormProps {
 }
 
 const RecipeForm: React.FC<RecipeFormProps> = ({onSubmit, initialData}) => {
-    const [title, setTitle] = useState('');
-    const [category, setCategory] = useState('');
-    const [ingredients, setIngredients] = useState('');
-    const [instructions, setInstructions] = useState('');
-    const [tags, setTags] = useState('');
-    const [imageUrl, setImageUrl] = useState('');
-    const [type, setType] = useState('');
-
-    useEffect(() => {
-        if (initialData) {
-            setTitle(initialData.title);
-            setCategory(initialData.category);
-            setIngredients(initialData.ingredients.join(', '));
-            setInstructions(initialData.instructions.join(', '));
-            setTags(initialData.tags ? initialData.tags.join(', ') : '');
-            setImageUrl(initialData.imageUrl);
-            setType(initialData.type);
-        }
-    }, [initialData]);
+    const [title, setTitle] = useState(initialData?.title || '');
+    const [category, setCategory] = useState(initialData?.category || '');
+    const [ingredients, setIngredients] = useState(initialData?.ingredients.join(', ') || '');
+    const [instructions, setInstructions] = useState(initialData?.instructions.join(', ') || '');
+    const [tags, setTags] = useState(initialData?.tags?.join(', ') || '');
+    const [type, setType] = useState(initialData?.type || '');
+    const [imageFile, setImageFile] = useState<File | null>(null);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -38,106 +25,127 @@ const RecipeForm: React.FC<RecipeFormProps> = ({onSubmit, initialData}) => {
             ingredients: ingredients.split(',').map((item) => item.trim()),
             instructions: instructions.split(',').map((item) => item.trim()),
             tags: tags ? tags.split(',').map((item) => item.trim()) : null,
-            imageUrl,
+            imageUrl: initialData?.imageUrl || '',
             type,
         };
 
-        if (initialData) {
-            // Update recipe
-            await fetch('/api/recipes', {
-                method: 'PUT',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(recipeData),
-            });
-        } else {
-            // Create recipe
-            await fetch('/api/recipes', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(recipeData),
-            });
+        const formData = new FormData();
+        if (imageFile) {
+            formData.append('image', imageFile);
         }
+        Object.keys(recipeData).forEach((key) => {
+            formData.append(key, recipeData[key]);
+        });
 
-        onSubmit(recipeData);
+        const requestOptions: RequestInit = {
+            method: initialData ? 'PUT' : 'POST',
+            body: formData,
+        };
 
-        setTitle('');
-        setCategory('');
-        setIngredients('');
-        setInstructions('');
-        setTags('');
-        setImageUrl('');
-        setType('');
+        const response = await fetch('/api/recipes', requestOptions);
+        const updatedRecipe = await response.json();
+
+        onSubmit(updatedRecipe);
     };
+
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (e.target.files) {
+            setImageFile(e.target.files[0]);
+        }
+    };
+
     return (
-        <form onSubmit={handleSubmit} className="space-y-4">
-            <label>
-                Title:
+        <form onSubmit={handleSubmit} className="space-y-4" encType="multipart/form-data">
+            <div>
+                <label htmlFor="title" className="block text-sm font-medium text-gray-700">
+                    Title
+                </label>
                 <input
                     type="text"
+                    id="title"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
-                    className="border px-2 py-1"
+                    className="w-full p-2 mt-1 border border-gray-300 rounded-md"
                 />
-            </label>
-            <label>
-                Category:
+            </div>
+
+            <div>
+                <label htmlFor="category" className="block text-sm font-medium text-gray-700">
+                    Category
+                </label>
                 <input
                     type="text"
+                    id="category"
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
-                    className="border px-2 py-1"
+                    className="w-full p-2 mt-1 border border-gray-300 rounded-md"
                 />
-            </label>
-            <label>
-                Ingredients (comma-separated):
+            </div>
+
+            <div>
+                <label htmlFor="ingredients" className="block text-sm font-medium text-gray-700">
+                    Ingredients (separate with commas)
+                </label>
                 <input
                     type="text"
+                    id="ingredients"
                     value={ingredients}
                     onChange={(e) => setIngredients(e.target.value)}
-                    className="border px-2 py-1"
+                    className="w-full p-2 mt-1 border border-gray-300 rounded-md"
                 />
-            </label>
-            <label>
-                Instructions (comma-separated):
+            </div>
+
+            <div>
+                <label htmlFor="instructions" className="block text-sm font-medium text-gray-700">
+                    Instructions (separate with commas)
+                </label>
                 <input
                     type="text"
+                    id="instructions"
                     value={instructions}
                     onChange={(e) => setInstructions(e.target.value)}
-                    className="border px-2 py-1"
+                    className="w-full p-2 mt-1 border border-gray-300 rounded-md"
                 />
-            </label>
-            <label>
-                Tags (comma-separated):
+            </div>
+
+            <div>
+                <label htmlFor="tags" className="block text-sm font-medium text-gray-700">
+                    Tags
+                </label>
                 <input
                     type="text"
+                    id="tags"
                     value={tags}
                     onChange={(e) => setTags(e.target.value)}
-                    className="border px-2 py-1"
+                    className="w-full p-2 mt-1 border border-gray-300 rounded-md"
                 />
-            </label>
-            <label>
-                Image URL:
+            </div>
+
+            <div>
+                <label htmlFor="type" className="block text-sm font-medium text-gray-700">
+                    Type
+                </label>
                 <input
                     type="text"
-                    value={imageUrl}
-                    onChange={(e) => setImageUrl(e.target.value)}
-                    className="border px-2 py-1"
-                />
-            </label>
-            <label>
-                Type:
-                <input
-                    type="text"
+                    id="type"
                     value={type}
                     onChange={(e) => setType(e.target.value)}
-                    className="border px-2 py-1"
+                    className="w-full p-2 mt-1 border border-gray-300 rounded-md"
                 />
-            </label>
+            </div>
+
+            <div>
+                <label htmlFor="image" className="block text-sm font-medium text-gray-700">
+                    Image
+                </label>
+                <input type="file" id="image" name="image" onChange={handleFileChange}/>
+            </div>
+
             <button
                 type="submit"
-                className="bg-blue-500 text-white py-1 px-3 mt-4"
+                className="w-full py-2 px-4 bg-blue-500 text-white rounded-md hover:bg-blue-700"
             >
-                {initialData ? 'Update' : 'Add'} Recipe
+                {initialData ? 'Update Recipe' : 'Add Recipe'}
             </button>
         </form>
     );

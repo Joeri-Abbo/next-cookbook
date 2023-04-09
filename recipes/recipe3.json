@@ -1,0 +1,28 @@
+{
+  "id": 2,
+  "title": "Classic Caesar Salad",
+  "category": "Salad",
+  "type": "HOOFDGERECHT",
+  "ingredients": [
+    "2 small garlic cloves, minced",
+    "6 anchovy fillets",
+    "2 egg yolks",
+    "1 tablespoon Dijon mustard",
+    "2 tablespoons fresh lemon juice",
+    "3/4 cup vegetable oil",
+    "1/4 cup grated Parmesan cheese",
+    "Salt",
+    "Freshly ground black pepper",
+    "2 Romaine lettuce hearts, chopped",
+    "1 cup croutons"
+  ],
+  "instructions": [
+    "In a large bowl, mash together garlic and anchovy fillets using a fork.",
+    "Whisk in egg yolks, Dijon mustard, and lemon juice.",
+    "Slowly drizzle in the vegetable oil while whisking constantly, until the dressing is thick and emulsified.",
+    "Stir in Parmesan cheese, and season the dressing with salt and pepper to taste.",
+    "Add chopped Romaine lettuce and croutons to the bowl. Toss until well coated with the dressing.",
+    "Serve immediately."
+  ],
+  "imageUrl": "https://source.unsplash.com/random/?caesar-salad"
+}
