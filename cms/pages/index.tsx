@@ -1,4 +1,3 @@
-// pages/index.tsx
 import type {NextPage} from 'next';
 import {useState, useEffect} from 'react';
 import RecipeForm from '../components/RecipeForm';

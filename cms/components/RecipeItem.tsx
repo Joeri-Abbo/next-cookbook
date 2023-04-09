@@ -1,4 +1,3 @@
-// components/RecipeItem.tsx
 import React, {useState} from 'react';
 import {Recipe} from '../../interfaces/Recipe';
 import RecipeForm from './RecipeForm';

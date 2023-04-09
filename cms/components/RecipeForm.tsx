@@ -1,4 +1,3 @@
-// components/RecipeForm.tsx
 import React, {useState, useEffect} from 'react';
 import {Recipe} from '../../interfaces/Recipe';
 import Input from "./Fields/Input";
@@ -92,14 +91,12 @@ const RecipeForm: React.FC<RecipeFormProps> = ({onSubmit, initialData, children}
         };
 
         if (initialData) {
-            // Update recipe
             await fetch('/api/recipes', {
                 method: 'PUT',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(recipeData),
             });
         } else {
-            // Create recipe
             await fetch('/api/recipes', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
