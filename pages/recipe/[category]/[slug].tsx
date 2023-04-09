@@ -21,6 +21,7 @@ export default function RecipeDetailPage({recipe, categoryName}: RecipeDetailPag
         <div>
             <h1>{recipe.title}</h1>
             <h2>Category: {categoryName}</h2>
+            <h3>Type: {recipe.type}</h3>
 
             {/* Add more recipe details and styling */}
         </div>

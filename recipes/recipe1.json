@@ -2,6 +2,7 @@
   "id": 1,
   "title": "Spaghetti Carbonara",
   "category": "Pasta",
+  "type": "HOOFDGERECHT",
   "ingredients": [
     "400g spaghetti",
     "150g pancetta",

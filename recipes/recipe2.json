@@ -2,6 +2,7 @@
   "id": 2,
   "title": "Classic Caesar Salad",
   "category": "Salad",
+  "type": "HOOFDGERECHT",
   "ingredients": [
     "2 small garlic cloves, minced",
     "6 anchovy fillets",
