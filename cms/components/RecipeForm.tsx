@@ -76,7 +76,7 @@ const RecipeForm: React.FC<RecipeFormProps> = ({onSubmit, initialData}) => {
                     type="text"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
-                    className="border px-2 py-1"
+                    className="w-full p-2 mt-1 border border-gray-300 rounded-md"
                 />
             </label>
             <label>
@@ -85,7 +85,7 @@ const RecipeForm: React.FC<RecipeFormProps> = ({onSubmit, initialData}) => {
                     type="text"
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
-                    className="border px-2 py-1"
+                    className="w-full p-2 mt-1 border border-gray-300 rounded-md"
                 />
             </label>
             <label>
@@ -94,7 +94,7 @@ const RecipeForm: React.FC<RecipeFormProps> = ({onSubmit, initialData}) => {
                     type="text"
                     value={ingredients}
                     onChange={(e) => setIngredients(e.target.value)}
-                    className="border px-2 py-1"
+                    className="w-full p-2 mt-1 border border-gray-300 rounded-md"
                 />
             </label>
             <label>
@@ -103,7 +103,7 @@ const RecipeForm: React.FC<RecipeFormProps> = ({onSubmit, initialData}) => {
                     type="text"
                     value={instructions}
                     onChange={(e) => setInstructions(e.target.value)}
-                    className="border px-2 py-1"
+                    className="w-full p-2 mt-1 border border-gray-300 rounded-md"
                 />
             </label>
             <label>
@@ -112,7 +112,7 @@ const RecipeForm: React.FC<RecipeFormProps> = ({onSubmit, initialData}) => {
                     type="text"
                     value={tags}
                     onChange={(e) => setTags(e.target.value)}
-                    className="border px-2 py-1"
+                    className="w-full p-2 mt-1 border border-gray-300 rounded-md"
                 />
             </label>
             <label>
@@ -121,17 +121,23 @@ const RecipeForm: React.FC<RecipeFormProps> = ({onSubmit, initialData}) => {
                     type="text"
                     value={imageUrl}
                     onChange={(e) => setImageUrl(e.target.value)}
-                    className="border px-2 py-1"
+                    className="w-full p-2 mt-1 border border-gray-300 rounded-md"
                 />
             </label>
             <label>
                 Type:
-                <input
-                    type="text"
+                <select
                     value={type}
                     onChange={(e) => setType(e.target.value)}
-                    className="border px-2 py-1"
-                />
+                    className="w-full p-2 mt-1 border border-gray-300 rounded-md"
+                >
+                    <option value="">Select type</option>
+                    <option value="voorgerecht">Voorgerecht</option>
+                    <option value="tussengerecht">Tussengerecht</option>
+                    <option value="hoofdgerecht">Hoofdgerecht</option>
+                    <option value="nagerecht">Nagrecht</option>
+                    <option value="dranken">Dranken</option>
+                </select>
             </label>
             <button
                 type="submit"

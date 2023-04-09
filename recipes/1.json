@@ -1,0 +1,38 @@
+{
+  "id": 1,
+  "title": "Spaghetti Carbonara",
+  "category": "Pasta",
+  "ingredients": [
+    "400g spaghetti",
+    "150g pancetta",
+    "4 large eggs",
+    "60g grated Parmesan cheese",
+    "60g grated Pecorino Romano cheese",
+    "Freshly ground black pepper",
+    "Salt"
+  ],
+  "instructions": [
+    "Cook spaghetti in a large pot of boiling salted water",
+    "stirring occasionally",
+    "until al dente. Drain and reserve 1 cup of pasta water.",
+    "Meanwhile",
+    "cook pancetta in a large skillet over medium heat",
+    "stirring occasionally",
+    "until crispy. Remove from heat.",
+    "In a medium bowl",
+    "whisk eggs",
+    "Parmesan cheese",
+    "Pecorino Romano cheese",
+    "and a generous amount of black pepper together.",
+    "Add drained spaghetti to the skillet with pancetta",
+    "and toss to combine. Pour egg mixture over pasta and quickly toss to coat. Add some reserved pasta water if the sauce is too thick.",
+    "Serve immediately with more cheese and black pepper",
+    "if desired."
+  ],
+  "tags": [
+    "Extra meat",
+    "Extra cheese"
+  ],
+  "imageUrl": "https://source.unsplash.com/random/?spaghetti-carbonara",
+  "type": "tussengerecht"
+}

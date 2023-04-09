@@ -1,9 +1,9 @@
 // pages/index.tsx
-import type { NextPage } from 'next';
-import { useState, useEffect } from 'react';
+import type {NextPage} from 'next';
+import {useState, useEffect} from 'react';
 import RecipeForm from '../components/RecipeForm';
 import RecipeItem from '../components/RecipeItem';
-import { Recipe } from '../../interfaces/Recipe';
+import {Recipe} from '../../interfaces/Recipe';
 
 const Home: NextPage = () => {
     const [recipes, setRecipes] = useState<Recipe[]>([]);
@@ -39,8 +39,10 @@ const Home: NextPage = () => {
     return (
         <div className="container mx-auto px-4">
             <h1 className="text-2xl font-bold mb-4">Recipes</h1>
-            <RecipeForm onSubmit={addRecipe} />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+                <div className="border p-4 rounded shadow">
+                    <RecipeForm onSubmit={addRecipe}/>
+                </div>
                 {recipes.map((recipe) => (
                     <RecipeItem
                         key={recipe.id}
