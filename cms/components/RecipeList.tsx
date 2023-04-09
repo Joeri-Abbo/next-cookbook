@@ -13,7 +13,7 @@ const RecipeList: React.FC<RecipeListProps> = ({recipes, onEdit, onDelete}) => {
     return (
         <div>
             {recipes.map((recipe) => (
-                <RecipeItem key={recipe.id} recipe={recipe} onEdit={onEdit} onDelete={onDelete}/>
+                <RecipeItem key={recipe.id} recipe={recipe} onUpdate={onEdit} onDelete={onDelete}/>
             ))}
         </div>
     );
