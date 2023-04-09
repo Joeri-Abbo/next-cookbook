@@ -1,8 +1,8 @@
 // components/RecipeForm.tsx
 import React, {useState, useEffect} from 'react';
 import {Recipe} from '../../interfaces/Recipe';
-import Input from "@/components/Fields/Input";
-import Select from "@/components/Fields/Select";
+import Input from "./Fields/Input";
+import Select from "./Fields/Select";
 
 interface RecipeFormProps {
     onSubmit: (recipe: Recipe) => void;
