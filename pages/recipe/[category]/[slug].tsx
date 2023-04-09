@@ -3,6 +3,8 @@ import {useRouter} from 'next/router';
 import {Recipe} from '../../../interfaces/Recipe';
 import {getAllRecipes, getRecipeBySlug} from '../../../lib/recipes';
 import slugify from 'slugify';
+import Whatsapp from "../../../components/Utilities/Share/Whatsapp";
+import Facebook from "../../../components/Utilities/Share/Facebook";
 
 interface RecipeDetailPageProps {
     recipe: Recipe;
@@ -29,6 +31,9 @@ export default function RecipeDetailPage({recipe, categoryName}: RecipeDetailPag
                 </div>
             ))}
             {/* Add more recipe details and styling */}
+
+            <Whatsapp asPath={router.asPath} text={"hallo"}/>
+            <Facebook asPath={router.asPath} text={"hallo"}/>
         </div>
     );
 }
