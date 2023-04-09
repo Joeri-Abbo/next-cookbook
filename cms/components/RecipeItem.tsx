@@ -24,13 +24,14 @@ const RecipeItem: React.FC<RecipeItemProps> = ({recipe, onDelete, onUpdate}) => 
     if (isEditing) {
         return (
             <div className="border p-4 rounded shadow">
-                <RecipeForm onSubmit={handleUpdate} initialData={recipe}/>
-                <button
-                    className="bg-red-500 text-white py-1 px-3 mt-4"
-                    onClick={() => setIsEditing(false)}
-                >
-                    Cancel
-                </button>
+                <RecipeForm onSubmit={handleUpdate} initialData={recipe}>
+                    <button
+                        className="bg-red-500 text-white py-1 px-3 mt-4 ml-2"
+                        onClick={() => setIsEditing(false)}
+                    >
+                        Cancel
+                    </button>
+                </RecipeForm>
             </div>
         );
     }

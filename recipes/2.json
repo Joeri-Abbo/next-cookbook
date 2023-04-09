@@ -2,7 +2,6 @@
   "id": 2,
   "title": "Classic Caesar Salad",
   "category": "Salad",
-  "type": "HOOFDGERECHT",
   "ingredients": [
     "2 small garlic cloves, minced",
     "6 anchovy fillets",
@@ -24,5 +23,7 @@
     "Add chopped Romaine lettuce and croutons to the bowl. Toss until well coated with the dressing.",
     "Serve immediately."
   ],
-  "imageUrl": "https://source.unsplash.com/random/?caesar-salad"
+  "tags": [],
+  "imageUrl": "https://source.unsplash.com/random/?caesar-salad",
+  "type": "dranken"
 }

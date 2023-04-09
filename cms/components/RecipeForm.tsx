@@ -1,13 +1,16 @@
 // components/RecipeForm.tsx
 import React, {useState, useEffect} from 'react';
 import {Recipe} from '../../interfaces/Recipe';
+import Input from "@/components/Fields/Input";
+import Select from "@/components/Fields/Select";
 
 interface RecipeFormProps {
     onSubmit: (recipe: Recipe) => void;
     initialData?: Recipe;
+    children?: React.ReactNode;
 }
 
-const RecipeForm: React.FC<RecipeFormProps> = ({onSubmit, initialData}) => {
+const RecipeForm: React.FC<RecipeFormProps> = ({onSubmit, initialData, children}) => {
     const [title, setTitle] = useState('');
     const [category, setCategory] = useState('');
     const [ingredients, setIngredients] = useState<string[]>(['']);
@@ -116,25 +119,8 @@ const RecipeForm: React.FC<RecipeFormProps> = ({onSubmit, initialData}) => {
     };
     return (
         <form onSubmit={handleSubmit} className="space-y-4">
-            <label>
-                Title:
-                <input
-                    type="text"
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                    className="w-full p-2 mt-1 border border-gray-300 rounded-md"
-                />
-            </label>
-            <label>
-                Category:
-                <input
-                    type="text"
-                    value={category}
-                    onChange={(e) => setCategory(e.target.value)}
-                    className="w-full p-2 mt-1 border border-gray-300 rounded-md"
-                />
-            </label>
-
+            <Input title={"Title"} value={title} onChange={(e) => setTitle(e.target.value)}/>
+            <Input title={"Category"} value={category} onChange={(e) => setCategory(e.target.value)}/>
             <div>
                 <label>Instructions:</label>
                 {instructions.map((instruction, index) => (
@@ -145,9 +131,11 @@ const RecipeForm: React.FC<RecipeFormProps> = ({onSubmit, initialData}) => {
                             onChange={(e) => handleInstructionChange(index, e.target.value)}
                             className="w-full p-2 mt-1 border border-gray-300 rounded-md"
                         />
-                        <button type="button" onClick={() => handleRemoveInstruction(index)}>
-                            Remove
-                        </button>
+                        {index > 0 && (
+                            <button type="button" onClick={() => handleRemoveInstruction(index)}>
+                                Remove
+                            </button>
+                        )}
                     </div>
                 ))}
                 <button type="button" onClick={handleAddInstruction}>
@@ -164,9 +152,11 @@ const RecipeForm: React.FC<RecipeFormProps> = ({onSubmit, initialData}) => {
                             onChange={(e) => handleIngredientChange(index, e.target.value)}
                             className="w-full p-2 mt-1 border border-gray-300 rounded-md"
                         />
-                        <button type="button" onClick={() => handleRemoveIngredient(index)}>
-                            Remove
-                        </button>
+                        {index > 0 && (
+                            <button type="button" onClick={() => handleRemoveIngredient(index)}>
+                                Remove
+                            </button>
+                        )}
                     </div>
                 ))}
                 <button type="button" onClick={handleAddIngredient}>
@@ -184,45 +174,33 @@ const RecipeForm: React.FC<RecipeFormProps> = ({onSubmit, initialData}) => {
                             onChange={(e) => handleTagChange(index, e.target.value)}
                             className="w-full p-2 mt-1 border border-gray-300 rounded-md"
                         />
-                        <button type="button" onClick={() => handleRemoveTag(index)}>
-                            Remove
-                        </button>
+                        {index > 0 && (
+                            <button type="button" onClick={() => handleRemoveTag(index)}>
+                                Remove
+                            </button>
+                        )}
                     </div>
                 ))}
                 <button type="button" onClick={handleAddTag}>
                     Add Tag
                 </button>
             </div>
-            <label>
-                Image URL:
-                <input
-                    type="text"
-                    value={imageUrl}
-                    onChange={(e) => setImageUrl(e.target.value)}
-                    className="w-full p-2 mt-1 border border-gray-300 rounded-md"
-                />
-            </label>
-            <label>
-                Type:
-                <select
-                    value={type}
-                    onChange={(e) => setType(e.target.value)}
-                    className="w-full p-2 mt-1 border border-gray-300 rounded-md"
-                >
-                    <option value="">Select type</option>
-                    <option value="voorgerecht">Voorgerecht</option>
-                    <option value="tussengerecht">Tussengerecht</option>
-                    <option value="hoofdgerecht">Hoofdgerecht</option>
-                    <option value="nagerecht">Nagrecht</option>
-                    <option value="dranken">Dranken</option>
-                </select>
-            </label>
+            <Input title={"Image URL"} value={imageUrl} onChange={(e) => setImageUrl(e.target.value)}/>
+            {/*@ts-ignore*/}
+            <Select title={"Type"} value={type} onChange={(e) => setType(e.target.value)} options={[
+                {value: "voorgerecht", label: "Voorgerecht"},
+                {value: "tussengerecht", label: "Tussengerecht"},
+                {value: "hoofdgerecht", label: "Hoofdgerecht"},
+                {value: "nagerecht", label: "Nagerecht"},
+                {value: "dranken", label: "Dranken"},
+            ]}/>
             <button
                 type="submit"
                 className="bg-blue-500 text-white py-1 px-3 mt-4"
             >
                 {initialData ? 'Update' : 'Add'} Recipe
             </button>
+            {children}
         </form>
     );
 };
