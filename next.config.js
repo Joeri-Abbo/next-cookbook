@@ -1,5 +1,32 @@
-module.exports = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
     env: {
         BASE_URL: process.env.BASE_URL,
     },
+    webpack(config) {
+        config.module.rules.push({
+            test: /\.svg$/,
+            use: ["@svgr/webpack"]
+        });
+        const alias = {...config.resolve.alias}
+
+        delete alias.url // alias to native-url
+
+        return config;
+    },
+    reactStrictMode: true,
+
+    images: {
+        unoptimized: true,
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'source.unsplash.com',
+                port: '',
+                pathname: '/random/**',
+            },
+        ],
+    },
 }
+
+module.exports = nextConfig
