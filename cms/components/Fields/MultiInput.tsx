@@ -1,4 +1,6 @@
 import React from 'react';
+import TrashSolid from "../../../public/icons/trash-solid.svg"
+import PlusSolid from "../../../public/icons/plus-solid.svg"
 
 interface InputFieldProps {
     onChangeInput: any;
@@ -22,13 +24,15 @@ const Input = ({onChangeInput, title, items, onAddInput, onRemoveInput}: InputFi
                     />
                     {index > 0 && (
                         <button type="button" onClick={() => onRemoveInput(index)}>
-                            Remove
+                            <TrashSolid className={"w-4 h-4 hover:scale-125 transform-gpu fill-red-500"}/>
+
                         </button>
                     )}
                 </div>
             ))}
             <button type="button" onClick={onAddInput}>
-                +
+                <PlusSolid className={"w-4 h-4 hover:scale-125 transform-gpu fill-green-500"}/>
+
             </button>
         </div>
     );

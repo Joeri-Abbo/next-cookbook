@@ -1,7 +1,6 @@
 import React, {ReactNode} from "react";
 import Link from "next/link";
 import FacebookIcon from "../../../public/icons/facebook.svg"
-import Envelope from "../public/icons/circle-envelope-solid.svg"
 
 type Props = {
     asPath: string
