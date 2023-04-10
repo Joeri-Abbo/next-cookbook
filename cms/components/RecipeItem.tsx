@@ -22,10 +22,10 @@ const RecipeItem: React.FC<RecipeItemProps> = ({recipe, onDelete, onUpdate}) => 
 
     if (isEditing) {
         return (
-            <div className="border p-4 rounded shadow">
+            <div className="rounded border p-4 shadow">
                 <RecipeForm onSubmit={handleUpdate} initialData={recipe}>
                     <button
-                        className="bg-red-500 text-white py-1 px-3 mt-4 ml-2"
+                        className="mt-4 ml-2 bg-red-500 py-1 px-3 text-white"
                         onClick={() => setIsEditing(false)}
                     >
                         Cancel
@@ -35,18 +35,18 @@ const RecipeItem: React.FC<RecipeItemProps> = ({recipe, onDelete, onUpdate}) => 
         );
     }
     return (
-        <div className="border p-4 rounded shadow">
+        <div className="rounded border p-4 shadow">
             <img src={recipe.imageUrl.startsWith("http") ? recipe.imageUrl : process.env.COOKBOOK_URL + recipe.imageUrl}
                  alt={recipe.title}
-                 className="w-full h-48 object-cover mb-4"/>
+                 className="mb-4 h-48 w-full object-cover"/>
 
-            <h2 className="text-xl font-bold mb-2">{recipe.title}</h2>
+            <h2 className="mb-2 text-xl font-bold">{recipe.title}</h2>
             <p>Category: {recipe.category}</p>
             <p>Type: {recipe.type}</p>
-            <button className="bg-blue-500 text-white py-1 px-3 mt-4 mr-2" onClick={() => setIsEditing(true)}>
+            <button className="mt-4 mr-2 bg-blue-500 py-1 px-3 text-white" onClick={() => setIsEditing(true)}>
                 Edit
             </button>
-            <button className="bg-red-500 text-white py-1 px-3 mt-4" onClick={handleDelete}>
+            <button className="mt-4 bg-red-500 py-1 px-3 text-white" onClick={handleDelete}>
                 Delete
             </button>
         </div>

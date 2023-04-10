@@ -154,7 +154,7 @@ const RecipeForm: React.FC<RecipeFormProps> = ({onSubmit, initialData, children}
             <InputField title={"Title"} value={title} onChange={(e) => setTitle(e.target.value)}/>
             <InputField title={"Category"} value={category} onChange={(e) => setCategory(e.target.value)}/>
 
-            <div className="w-full flex gap-2">
+            <div className="flex w-full gap-2">
                 <div className="w-1/2">
                     {/*@ts-ignore*/}
                     <NumberField onChange={(e) => setBakingTime(e.target.value)} title={"Baking time"}
@@ -201,7 +201,7 @@ const RecipeForm: React.FC<RecipeFormProps> = ({onSubmit, initialData, children}
             ]}/>
             <button
                 type="submit"
-                className="bg-blue-500 text-white py-1 px-3 mt-4"
+                className="mt-4 bg-blue-500 py-1 px-3 text-white"
             >
                 {initialData ? 'Update' : 'Add'} Recipe
             </button>

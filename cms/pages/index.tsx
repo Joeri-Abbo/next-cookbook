@@ -37,9 +37,9 @@ const Home: NextPage = () => {
 
     return (
         <div className="container mx-auto px-4">
-            <h1 className="text-2xl font-bold mb-4">Recipes</h1>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
-                <div className="border p-4 rounded shadow">
+            <h1 className="mb-4 text-2xl font-bold">Recipes</h1>
+            <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="rounded border p-4 shadow">
                     <RecipeForm onSubmit={addRecipe}/>
                 </div>
                 {recipes.map((recipe) => (

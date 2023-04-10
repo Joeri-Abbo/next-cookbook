@@ -20,7 +20,7 @@ const Input = ({onChangeInput, title, items, onAddInput, onRemoveInput}: InputFi
                         type="text"
                         value={item}
                         onChange={(e) => onChangeInput(index, e.target.value)}
-                        className="w-full p-2 mt-1 border border-gray-300 rounded-md"
+                        className="mt-1 w-full rounded-md border border-gray-300 p-2"
                     />
                     {index > 0 && (
                         <button type="button" onClick={() => onRemoveInput(index)}>
