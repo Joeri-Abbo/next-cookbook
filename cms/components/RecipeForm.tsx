@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {Recipe} from '../../interfaces/Recipe';
 import Input from "./Fields/Input";
 import Select from "./Fields/Select";
+import MultiInput from "@/components/Fields/MultiInput";
 
 interface RecipeFormProps {
     onSubmit: (recipe: Recipe) => void;
@@ -118,73 +119,29 @@ const RecipeForm: React.FC<RecipeFormProps> = ({onSubmit, initialData, children}
         <form onSubmit={handleSubmit} className="space-y-4">
             <Input title={"Title"} value={title} onChange={(e) => setTitle(e.target.value)}/>
             <Input title={"Category"} value={category} onChange={(e) => setCategory(e.target.value)}/>
-            <div>
-                <label>Instructions:</label>
-                {instructions.map((instruction, index) => (
-                    <div key={index} className="flex space-x-2">
-                        <input
-                            type="text"
-                            value={instruction}
-                            onChange={(e) => handleInstructionChange(index, e.target.value)}
-                            className="w-full p-2 mt-1 border border-gray-300 rounded-md"
-                        />
-                        {index > 0 && (
-                            <button type="button" onClick={() => handleRemoveInstruction(index)}>
-                                Remove
-                            </button>
-                        )}
-                    </div>
-                ))}
-                <button type="button" onClick={handleAddInstruction}>
-                    Add instruction
-                </button>
-            </div>
-            <div>
-                <label>Ingredients:</label>
-                {ingredients.map((ingredient, index) => (
-                    <div key={index} className="flex space-x-2">
-                        <input
-                            type="text"
-                            value={ingredient}
-                            onChange={(e) => handleIngredientChange(index, e.target.value)}
-                            className="w-full p-2 mt-1 border border-gray-300 rounded-md"
-                        />
-                        {index > 0 && (
-                            <button type="button" onClick={() => handleRemoveIngredient(index)}>
-                                Remove
-                            </button>
-                        )}
-                    </div>
-                ))}
-                <button type="button" onClick={handleAddIngredient}>
-                    Add Ingredient
-                </button>
-            </div>
+            <MultiInput
+                onChangeInput={handleInstructionChange}
+                onRemoveInput={handleRemoveInstruction}
+                onAddInput={handleAddInstruction}
+                title={'Instructions'}
+                items={instructions}/>
 
-            <div>
-                <label>Tags:</label>
-                {tags.map((tag, index) => (
-                    <div key={index} className="flex space-x-2">
-                        <input
-                            type="text"
-                            value={tag}
-                            onChange={(e) => handleTagChange(index, e.target.value)}
-                            className="w-full p-2 mt-1 border border-gray-300 rounded-md"
-                        />
-                        {index > 0 && (
-                            <button type="button" onClick={() => handleRemoveTag(index)}>
-                                Remove
-                            </button>
-                        )}
-                    </div>
-                ))}
-                <button type="button" onClick={handleAddTag}>
-                    Add Tag
-                </button>
-            </div>
+            <MultiInput
+                onChangeInput={handleIngredientChange}
+                onRemoveInput={handleRemoveIngredient}
+                onAddInput={handleAddIngredient}
+                title={'Ingredients'}
+                items={ingredients}/>
+
+            <MultiInput
+                onChangeInput={handleTagChange}
+                onRemoveInput={handleRemoveTag}
+                onAddInput={handleAddTag}
+                title={'Tags'}
+                items={tags}/>
+
             <Input title={"Image URL"} value={imageUrl} onChange={(e) => setImageUrl(e.target.value)}/>
-            {/*@ts-ignore*/}
-            <Select title={"Type"} value={type} onChange={(e) => setType(e.target.value)} options={[
+            <Select title={"Type"} value={type} onChange={(e:any) => setType(e.target.value)} options={[
                 {value: "voorgerecht", label: "Voorgerecht"},
                 {value: "tussengerecht", label: "Tussengerecht"},
                 {value: "hoofdgerecht", label: "Hoofdgerecht"},
