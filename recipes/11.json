@@ -1,0 +1,31 @@
+{
+  "id": 5,
+  "title": "Chicken Fajitas",
+  "category": "Main Dishes",
+  "ingredients": [
+    "1 lb boneless, skinless chicken breasts, sliced",
+    "1 large onion, sliced",
+    "1 large bell pepper, sliced",
+    "2 tbsp olive oil",
+    "1 tbsp chili powder",
+    "1 tsp ground cumin",
+    "1/2 tsp garlic powder",
+    "1/4 tsp salt",
+    "8 flour tortillas",
+    "Sour cream, shredded cheese, and salsa, for serving"
+  ],
+  "instructions": [
+    "In a large skillet over medium-high heat, sauté chicken, onion, and bell pepper in olive oil until chicken is no longer pink and vegetables are tender.",
+    "Add chili powder, cumin, garlic powder, and salt, and stir to combine.",
+    "Warm tortillas according to package instructions.",
+    "Serve chicken and vegetable mixture in warm tortillas, topped with sour cream, shredded cheese, and salsa as desired."
+  ],
+  "tags": [
+    "Mexican",
+    "Chicken"
+  ],
+  "imageUrl": "https://www.example.com/chickenfajitas.jpg",
+  "type": "Cooked",
+  "preparationTime": 20,
+  "bakingTime": null
+}

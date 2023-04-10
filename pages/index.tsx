@@ -15,9 +15,8 @@ interface HomeProps {
 export default function Home({recipes, categories}: HomeProps) {
     return (
         <Layout>
-            <h1 className="text-4xl">Recipe Categories</h1>
+            <h1 className="text-4xl text-center	">Recipe Categories</h1>
             <div className="mt-4 grid grid-cols-2 flex-col-reverse gap-4 md:grid-cols-3 lg:grid-cols-6">
-
                 {categories.map((category) => (
                     <Link
                         href={`/category/${encodeURIComponent(

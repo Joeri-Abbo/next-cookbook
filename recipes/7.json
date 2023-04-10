@@ -1,0 +1,32 @@
+{
+  "id": 7,
+  "title": "Classic Chocolate Chip Cookies",
+  "category": "Desserts",
+  "ingredients": [
+    "2 1/4 cups all-purpose flour",
+    "1 tsp baking soda",
+    "1 tsp salt",
+    "1 cup unsalted butter, room temperature",
+    "3/4 cup white sugar",
+    "3/4 cup brown sugar",
+    "2 large eggs",
+    "2 tsp vanilla extract",
+    "2 cups semisweet chocolate chips"
+  ],
+  "instructions": [
+    "Preheat oven to 375°F (190°C).",
+    "In a medium bowl, whisk together flour, baking soda, and salt.",
+    "In a large bowl, beat butter, white sugar, and brown sugar until creamy.",
+    "Add eggs and vanilla extract, and beat until well combined.",
+    "Gradually add flour mixture to butter mixture, stirring until just combined.",
+    "Stir in chocolate chips.",
+    "Drop dough by rounded tablespoonfuls onto ungreased baking sheets.",
+    "Bake for 10-12 minutes, or until lightly golden brown.",
+    "Cool on baking sheets for 2 minutes before transferring to wire racks to cool completely."
+  ],
+  "tags": ["Chocolate", "Cookies"],
+  "imageUrl": "https://www.example.com/cookie.jpg",
+  "type": "Baked",
+  "preparationTime": 20,
+  "bakingTime": 10
+}

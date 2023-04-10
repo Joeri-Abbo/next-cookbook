@@ -1,0 +1,31 @@
+{
+  "id": 8,
+  "title": "Spaghetti Bolognese",
+  "category": "Main Dishes",
+  "ingredients": [
+    "1 lb ground beef",
+    "1 large onion, chopped",
+    "2 cloves garlic, minced",
+    "1 can diced tomatoes (28 oz)",
+    "1 can tomato sauce (15 oz)",
+    "1 tsp dried basil",
+    "1 tsp dried oregano",
+    "1/2 tsp salt",
+    "1/4 tsp black pepper",
+    "1 lb spaghetti",
+    "Grated Parmesan cheese"
+  ],
+  "instructions": [
+    "In a large pot or Dutch oven, brown ground beef over medium-high heat.",
+    "Add onion and garlic, and sauté until onion is translucent.",
+    "Stir in diced tomatoes, tomato sauce, basil, oregano, salt, and pepper.",
+    "Reduce heat to low, cover, and simmer for 20-30 minutes, stirring occasionally.",
+    "Meanwhile, cook spaghetti according to package instructions.",
+    "Serve bolognese sauce over cooked spaghetti, and sprinkle with Parmesan cheese."
+  ],
+  "tags": ["Pasta", "Meat"],
+  "imageUrl": "https://www.example.com/spaghetti.jpg",
+  "type": "Cooked",
+  "preparationTime": 15,
+  "bakingTime": null
+}
