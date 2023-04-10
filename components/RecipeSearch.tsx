@@ -3,6 +3,7 @@ import {Recipe} from '../interfaces/Recipe';
 import Link from "next/link";
 import slugify from "slugify";
 import Image from "next/image";
+import LazyImage from "./LazyImage";
 
 interface RecipeSearchProps {
     recipes: Recipe[];
@@ -33,7 +34,13 @@ const RecipeSearch: React.FC<RecipeSearchProps> = ({recipes}) => {
                             lower: true,
                         })}`}
                     >
-                        <Image className="w-full" src={recipe.imageUrl} alt={recipe.title} width={100} height={100}/>
+                        <LazyImage
+                            src={
+                                recipe.imageUrl
+                            }
+                            alt={recipe.title}
+                            className="w-full"
+                        />
                         {recipe.title}
                     </Link>
                 ))}
