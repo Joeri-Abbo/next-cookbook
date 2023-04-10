@@ -32,7 +32,6 @@ export default function CategoryPage({recipes, categoryName}: CategoryPageProps)
                             {recipe.title}
                         </Link>
                     </h2>
-                    {/* Add more recipe details and styling */}
                 </div>
             ))}
         </div>
