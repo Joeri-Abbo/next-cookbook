@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {Recipe} from '../../interfaces/Recipe';
 import InputField from "./Fields/Input";
 import SelectField from "./Fields/Select";
+import NumberField from "./Fields/Number";
 import MultiInputField from "./Fields/MultiInput";
 
 interface RecipeFormProps {
@@ -18,6 +19,8 @@ const RecipeForm: React.FC<RecipeFormProps> = ({onSubmit, initialData, children}
     const [tags, setTags] = useState<string[]>(['']);
     const [imageUrl, setImageUrl] = useState('');
     const [type, setType] = useState('');
+    const [preparationTime, setPreparationTime] = useState(0);
+    const [bakingTime, setBakingTime] = useState(0);
 
     useEffect(() => {
         if (initialData) {
@@ -28,6 +31,8 @@ const RecipeForm: React.FC<RecipeFormProps> = ({onSubmit, initialData, children}
             setTags(initialData.tags ? initialData.tags : []);
             setImageUrl(initialData.imageUrl);
             setType(initialData.type);
+            setPreparationTime(initialData.preparationTime ?? 0);
+            setBakingTime(initialData.bakingTime ?? 0);
         }
     }, [initialData]);
     const handleAddInstruction = () => {
@@ -89,6 +94,8 @@ const RecipeForm: React.FC<RecipeFormProps> = ({onSubmit, initialData, children}
             tags: tags ? tags.map((item) => item.trim()) : null,
             imageUrl,
             type,
+            preparationTime,
+            bakingTime,
         };
 
         if (initialData) {
@@ -114,6 +121,8 @@ const RecipeForm: React.FC<RecipeFormProps> = ({onSubmit, initialData, children}
         setTags([]);
         setImageUrl('');
         setType('');
+        setPreparationTime(0);
+        setBakingTime(0);
     };
 
     const handleImageUpload = async (file: File) => {
@@ -144,13 +153,20 @@ const RecipeForm: React.FC<RecipeFormProps> = ({onSubmit, initialData, children}
         <form onSubmit={handleSubmit} className="space-y-4">
             <InputField title={"Title"} value={title} onChange={(e) => setTitle(e.target.value)}/>
             <InputField title={"Category"} value={category} onChange={(e) => setCategory(e.target.value)}/>
-            <MultiInputField
-                onChangeInput={handleInstructionChange}
-                onRemoveInput={handleRemoveInstruction}
-                onAddInput={handleAddInstruction}
-                title={'Instructions'}
-                items={instructions}/>
 
+            <div className="w-full flex gap-2">
+                <div className="w-1/2">
+                    {/*@ts-ignore*/}
+                    <NumberField onChange={(e) => setBakingTime(e.target.value)} title={"Baking time"}
+                                 value={bakingTime}/>
+
+                </div>
+                <div className="w-1/2">
+                    {/*@ts-ignore*/}
+                    <NumberField onChange={(e) => setPreparationTime(e.target.value)}
+                                 title={"Preparation time"} value={preparationTime}/>
+                </div>
+            </div>
             <MultiInputField
                 onChangeInput={handleIngredientChange}
                 onRemoveInput={handleRemoveIngredient}
@@ -159,14 +175,21 @@ const RecipeForm: React.FC<RecipeFormProps> = ({onSubmit, initialData, children}
                 items={ingredients}/>
 
             <MultiInputField
+                onChangeInput={handleInstructionChange}
+                onRemoveInput={handleRemoveInstruction}
+                onAddInput={handleAddInstruction}
+                title={'Instructions'}
+                items={instructions}/>
+
+            <MultiInputField
                 onChangeInput={handleTagChange}
                 onRemoveInput={handleRemoveTag}
                 onAddInput={handleAddTag}
                 title={'Tags'}
                 items={tags}/>
             {/*@ts-ignore*/}
-            <input type="file" accept="image/*" title={"Upload Image"}
-                   onChange={(e) => handleImageUpload(e.target.files[0])}/>
+            <input onChange={(e) => handleImageUpload(e.target.files[0])} type="file" accept="image/*"
+                   title={"Upload Image"}/>
 
             {/*<Input title={"Image URL"} value={imageUrl} onChange={(e) => setImageUrl(e.target.value)}/>*/}
             <SelectField title={"Type"} value={type} onChange={(e: any) => setType(e.target.value)} options={[

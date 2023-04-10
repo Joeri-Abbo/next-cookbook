@@ -4,6 +4,7 @@ import {getAllRecipes} from '../lib/recipes';
 import Link from "next/link";
 import slugify from "slugify";
 import RecipeSearch from '../components/RecipeSearch';
+import Layout from "../components/Layout";
 
 interface HomeProps {
     recipes: Recipe[];
@@ -12,11 +13,11 @@ interface HomeProps {
 
 export default function Home({recipes, categories}: HomeProps) {
     return (
-        <div>
+        <Layout>
             <h1>Recipe Categories</h1>
             {categories.map((category) => (
-                <div key={category}>
-                    <h2>
+                <div key={category} className="flex gap-2		">
+                    <h2 className="inline">
                         <Link href={`/category/${encodeURIComponent(slugify(category, {lower: true}))}`}>
                             {category}
                         </Link>
@@ -25,7 +26,7 @@ export default function Home({recipes, categories}: HomeProps) {
             ))}
 
             <RecipeSearch recipes={recipes}/>
-        </div>
+        </Layout>
     );
 }
 

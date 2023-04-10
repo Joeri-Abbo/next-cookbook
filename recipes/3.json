@@ -30,6 +30,8 @@
     "sweet",
     "party"
   ],
-  "imageUrl": "",
-  "type": "dessert"
+  "imageUrl": "https://source.unsplash.com/random/?Vanilla Cupcakes",
+  "type": "dessert",
+  "preparationTime": 15,
+  "bakingTime": 15
 }

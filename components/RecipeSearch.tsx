@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import {Recipe} from '../interfaces/Recipe';
+import Link from "next/link";
+import slugify from "slugify";
 
 interface RecipeSearchProps {
     recipes: Recipe[];
@@ -24,7 +26,13 @@ const RecipeSearch: React.FC<RecipeSearchProps> = ({recipes}) => {
                 {filteredRecipes.map((recipe) => (
                     <div key={recipe.id} className="recipe">
                         {/* Display your recipe information here */}
-                        <h3>{recipe.title}</h3>
+                        <Link
+                            href={`/recipe/${encodeURIComponent(recipe.category)}/${slugify(recipe.title, {
+                                lower: true,
+                            })}`}
+                        >
+                            {recipe.title}
+                        </Link>
                     </div>
                 ))}
             </div>

@@ -4,6 +4,7 @@ import {Recipe} from '../../interfaces/Recipe';
 import {getAllRecipes, getRecipesByCategory} from '../../lib/recipes';
 import slugify from "slugify";
 import RecipeSearch from "../../components/RecipeSearch";
+import Layout from "../../components/Layout";
 
 interface CategoryPageProps {
     recipes: Recipe[];
@@ -18,10 +19,10 @@ export default function CategoryPage({recipes, categoryName}: CategoryPageProps)
     }
 
     return (
-        <div>
+        <Layout>
             <h1>Recipes in {categoryName} category</h1>
             <RecipeSearch recipes={recipes}/>
-        </div>
+        </Layout>
     );
 }
 

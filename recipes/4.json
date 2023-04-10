@@ -26,6 +26,8 @@
     "quick",
     "easy"
   ],
-  "imageUrl": "",
-  "type": "main"
+  "imageUrl": "https://source.unsplash.com/random/?Chicken Caesar Salad",
+  "type": "main",
+  "preparationTime": 15,
+  "bakingTime": 15
 }

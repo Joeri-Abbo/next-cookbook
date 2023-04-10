@@ -26,6 +26,8 @@
     "vegetarian",
     "easy"
   ],
-  "imageUrl": "",
-  "type": "main"
+  "imageUrl": "https://source.unsplash.com/random/?pizza",
+  "type": "main",
+  "preparationTime": 15,
+  "bakingTime": "11"
 }

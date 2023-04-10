@@ -7,4 +7,6 @@ export interface Recipe {
     tags: string[] | null;
     imageUrl: string;
     type: string;
+    preparationTime: number | null;
+    bakingTime: number | null;
 }
