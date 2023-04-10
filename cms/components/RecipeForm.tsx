@@ -36,7 +36,7 @@ const RecipeForm: React.FC<RecipeFormProps> = ({onSubmit, initialData, children}
     const handleInstructionChange = (index: number, value: string) => {
         const newInstructions = [...instructions];
         newInstructions[index] = value;
-        setIngredients(newInstructions);
+        setInstructions(newInstructions);
     };
 
     const handleRemoveInstruction = (index: number) => {
