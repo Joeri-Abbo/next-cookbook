@@ -34,10 +34,12 @@ const RecipeItem: React.FC<RecipeItemProps> = ({recipe, onDelete, onUpdate}) => 
             </div>
         );
     }
-
     return (
         <div className="border p-4 rounded shadow">
-            <img src={recipe.imageUrl} alt={recipe.title} className="w-full h-48 object-cover mb-4"/>
+            <img src={recipe.imageUrl.startsWith("http") ? recipe.imageUrl : process.env.COOKBOOK_URL + recipe.imageUrl}
+                 alt={recipe.title}
+                 className="w-full h-48 object-cover mb-4"/>
+
             <h2 className="text-xl font-bold mb-2">{recipe.title}</h2>
             <p>Category: {recipe.category}</p>
             <p>Type: {recipe.type}</p>
