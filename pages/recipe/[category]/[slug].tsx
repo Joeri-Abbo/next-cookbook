@@ -28,8 +28,6 @@ export default function RecipeDetailPage({recipe, categoryName}: RecipeDetailPag
                     <span>{tag}</span>
                 </div>
             ))}
-            {/* Add more recipe details and styling */}
-
             <Items asPath={router.asPath} text={"hallo"}/>
         </div>
     );
