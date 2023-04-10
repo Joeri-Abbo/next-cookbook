@@ -1,14 +1,13 @@
 import {GetStaticPaths, GetStaticProps} from 'next';
-import Link from 'next/link';
 import {useRouter} from 'next/router';
 import {Recipe} from '../../interfaces/Recipe';
 import {getAllRecipes, getRecipesByCategory} from '../../lib/recipes';
 import slugify from "slugify";
+import RecipeSearch from "../../components/RecipeSearch";
 
 interface CategoryPageProps {
     recipes: Recipe[];
     categoryName: string;
-
 }
 
 export default function CategoryPage({recipes, categoryName}: CategoryPageProps) {
@@ -21,19 +20,7 @@ export default function CategoryPage({recipes, categoryName}: CategoryPageProps)
     return (
         <div>
             <h1>Recipes in {categoryName} category</h1>
-            {recipes.map((recipe) => (
-                <div key={recipe.id}>
-                    <h2>
-                        <Link
-                            href={`/recipe/${encodeURIComponent(recipe.category)}/${slugify(recipe.title, {
-                                lower: true,
-                            })}`}
-                        >
-                            {recipe.title}
-                        </Link>
-                    </h2>
-                </div>
-            ))}
+            <RecipeSearch recipes={recipes}/>
         </div>
     );
 }

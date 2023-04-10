@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {Recipe} from '../../interfaces/Recipe';
 import InputField from "./Fields/Input";
 import SelectField from "./Fields/Select";
-import MultiInputField from "@/components/Fields/MultiInput";
+import MultiInputField from "./Fields/MultiInput";
 
 interface RecipeFormProps {
     onSubmit: (recipe: Recipe) => void;

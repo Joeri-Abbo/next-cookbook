@@ -1,29 +1,32 @@
 {
   "id": 2,
-  "title": "Classic Caesar Salad",
-  "category": "Salad",
+  "title": "Pasta Carbonara",
+  "category": "Pasta",
   "ingredients": [
-    "2 small garlic cloves, minced",
-    "6 anchovy fillets",
-    "2 egg yolks",
-    "1 tablespoon Dijon mustard",
-    "2 tablespoons fresh lemon juice",
-    "3/4 cup vegetable oil",
-    "1/4 cup grated Parmesan cheese",
+    "12 oz spaghetti",
+    "4 large eggs",
+    "1/2 cup grated Parmesan cheese",
+    "4 oz pancetta, diced",
+    "4 cloves garlic, minced",
     "Salt",
-    "Freshly ground black pepper",
-    "2 Romaine lettuce hearts, chopped",
-    "1 cup croutons"
+    "Pepper"
   ],
   "instructions": [
-    "In a large bowl, mash together garlic and anchovy fillets using a fork.",
-    "Whisk in egg yolks, Dijon mustard, and lemon juice.",
-    "Slowly drizzle in the vegetable oil while whisking constantly, until the dressing is thick and emulsified.",
-    "Stir in Parmesan cheese, and season the dressing with salt and pepper to taste.",
-    "Add chopped Romaine lettuce and croutons to the bowl. Toss until well coated with the dressing.",
+    "Cook the spaghetti in a large pot of boiling salted water until al dente.",
+    "In a medium bowl, whisk together eggs and Parmesan cheese.",
+    "In a large skillet, cook pancetta over medium heat until crisp.",
+    "Add garlic to the skillet and cook until fragrant, about 1 minute.",
+    "Drain pasta, reserving 1/2 cup of pasta water.",
+    "Add pasta to the skillet and toss to coat.",
+    "Slowly pour the egg mixture into the skillet, stirring constantly to avoid scrambling the eggs.",
+    "Add reserved pasta water as needed to create a creamy sauce.",
+    "Season with salt and pepper to taste.",
     "Serve immediately."
   ],
-  "tags": [],
-  "imageUrl": "https://source.unsplash.com/random/?caesar-salad",
-  "type": "dranken"
+  "tags": [
+    "Italian",
+    "quick"
+  ],
+  "imageUrl": "",
+  "type": "main"
 }

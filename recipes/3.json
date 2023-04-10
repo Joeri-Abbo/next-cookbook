@@ -1,0 +1,35 @@
+{
+  "id": 3,
+  "title": "Vanilla Cupcakes",
+  "category": "Dessert",
+  "ingredients": [
+    "1 1/2 cups all-purpose flour",
+    "1 1/2 teaspoons baking powder",
+    "1/4 teaspoon salt",
+    "1/2 cup unsalted butter, softened",
+    "1 cup granulated sugar",
+    "2 large eggs",
+    "1 teaspoon vanilla extract",
+    "1/2 cup whole milk"
+  ],
+  "instructions": [
+    "Preheat oven to 350°F (175°C). Line a 12-cup muffin tin with paper liners.",
+    "In a medium bowl, whisk together flour, baking powder, and salt.",
+    "In a large bowl, cream together butter and sugar until light and fluffy.",
+    "Add eggs, one at a time, mixing well after each addition.",
+    "Stir invanilla extract.",
+    "Add the flour mixture to the butter mixture in three parts, alternating with the milk, beginning and ending with the flour mixture. Mix until just combined.",
+    "Divide the batter evenly among the muffin cups, filling each about 2/3 full.",
+    "Bake in the preheated oven for 18-20 minutes, or until a toothpick inserted into the center of a cupcake comes out clean.",
+    "Remove from oven and allow cupcakes to cool in the pan for 5 minutes.",
+    "Transfer cupcakes to a wire rack to cool completely.",
+    "Once cooled, frost with your desired frosting and serve."
+  ],
+  "tags": [
+    "dessert",
+    "sweet",
+    "party"
+  ],
+  "imageUrl": "",
+  "type": "dessert"
+}

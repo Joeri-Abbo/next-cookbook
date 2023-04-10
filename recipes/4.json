@@ -1,0 +1,31 @@
+{
+  "id": 4,
+  "title": "Chicken Caesar Salad",
+  "category": "Salad",
+  "ingredients": [
+    "2 boneless, skinless chicken breasts",
+    "1 head romaine lettuce, chopped",
+    "1/2 cup Caesar dressing",
+    "1/2 cup croutons",
+    "1/2 cup grated Parmesan cheese",
+    "1 tablespoon olive oil",
+    "Salt",
+    "Pepper"
+  ],
+  "instructions": [
+    "Preheat a grill or grill pan over medium-high heat.",
+    "Season chicken breasts with salt and pepper.",
+    "Grill chicken for 5-7 minutes per side, or until cooked through and an internal temperature of 165°F (74°C) is reached.",
+    "Remove chicken from grill and let rest for 5 minutes. Then, slice into strips.",
+    "In a large bowl, combine chopped romaine lettuce and Caesar dressing. Toss until well coated.",
+    "Add grilled chicken, croutons, and Parmesan cheese to the salad. Toss to combine.",
+    "Serve immediately."
+  ],
+  "tags": [
+    "healthy",
+    "quick",
+    "easy"
+  ],
+  "imageUrl": "",
+  "type": "main"
+}

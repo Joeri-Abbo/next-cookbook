@@ -1,0 +1,31 @@
+{
+  "id": 1,
+  "title": "Classic Margherita Pizza",
+  "category": "Pizza",
+  "ingredients": [
+    "1 pizza dough",
+    "1/2 cup tomato sauce",
+    "1 1/2 cups shredded mozzarella cheese",
+    "1/4 cup fresh basil leaves",
+    "1 tablespoon olive oil",
+    "Salt",
+    "Pepper"
+  ],
+  "instructions": [
+    "Preheat oven to 475°F (245°C).",
+    "Roll out pizza dough on a floured surface.",
+    "Transfer dough to a pizza stone or baking sheet.",
+    "Spread tomato sauce evenly over the dough, leaving a border around the edges.",
+    "Sprinkle mozzarella cheese over the sauce.",
+    "Bake in the preheated oven for 12-15 minutes, or until the crust is golden and the cheese is melted and bubbly.",
+    "Remove from oven, and top with fresh basil leaves.",
+    "Drizzle with olive oil, and season with salt and pepper to taste.",
+    "Slice and serve."
+  ],
+  "tags": [
+    "vegetarian",
+    "easy"
+  ],
+  "imageUrl": "",
+  "type": "main"
+}

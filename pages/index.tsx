@@ -3,6 +3,7 @@ import {Recipe} from '../interfaces/Recipe';
 import {getAllRecipes} from '../lib/recipes';
 import Link from "next/link";
 import slugify from "slugify";
+import RecipeSearch from '../components/RecipeSearch';
 
 interface HomeProps {
     recipes: Recipe[];
@@ -23,12 +24,7 @@ export default function Home({recipes, categories}: HomeProps) {
                 </div>
             ))}
 
-            {recipes.map((recipe) => (
-                <div key={recipe.id}>
-                    <h2>{recipe.title}</h2>
-                    {/* Add more recipe details and styling */}
-                </div>
-            ))}
+            <RecipeSearch recipes={recipes}/>
         </div>
     );
 }

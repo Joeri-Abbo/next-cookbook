@@ -1,0 +1,35 @@
+{
+  "id": 5,
+  "title": "Shrimp Tacos with Mango Salsa",
+  "category": "Tacos",
+  "ingredients": [
+    "1 lb shrimp, peeled and deveined",
+    "1 tablespoon olive oil",
+    "1 teaspoon chili powder",
+    "1 teaspoon paprika",
+    "1/2 teaspoon cumin",
+    "Salt",
+    "Pepper",
+    "8 small flour tortillas",
+    "1 ripe mango, diced",
+    "1 small red onion, finely diced",
+    "1 jalapeno, seeds removed and minced",
+    "1/4 cup chopped cilantro",
+    "1 lime, juiced"
+  ],
+  "instructions": [
+    "In a medium bowl, combine shrimp, olive oil, chili powder, paprika, cumin, salt, and pepper. Toss to coat.",
+    "Heat a large skillet over medium-high heat. Cook shrimp in a single layer for 2-3 minutes per side, or until cooked through and opaque.",
+    "In a separate bowl, mix together mango, red onion, jalapeno, cilantro, and lime juice to create the mango salsa.",
+    "Warm tortillas in a dry skillet or in the microwave for a few seconds.",
+    "Assemble tacos by placing a few shrimp in each tortilla and topping with mango salsa.",
+    "Serve immediately."
+  ],
+  "tags": [
+    "seafood",
+    "summer",
+    "fresh"
+  ],
+  "imageUrl": "",
+  "type": "main"
+}
