@@ -1,4 +1,5 @@
 import {NextApiRequest, NextApiResponse} from "next";
+// @ts-ignore
 import multer from "multer";
 import path from "path";
 
