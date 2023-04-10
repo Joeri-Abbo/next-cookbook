@@ -26,7 +26,11 @@ const Layout = ({children, title = 'Cookbook'}: Props) => (
                 </div>
             </div>
         </header>
-        {children}
+
+        <div className="mx-4 mt-4">
+            {children}
+        </div>
+
         <footer className="relative mt-24 pt-6">
             <div className="text-center text-sm text-gray-500">
                 <span className="mr-2 text-lg font-bold text-gray-900 dark:text-gray-100">

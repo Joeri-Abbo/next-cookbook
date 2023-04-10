@@ -5,6 +5,7 @@ import Link from "next/link";
 import slugify from "slugify";
 import RecipeSearch from '../components/RecipeSearch';
 import Layout from "../components/Layout";
+import Image from "next/image";
 
 interface HomeProps {
     recipes: Recipe[];
@@ -14,17 +15,35 @@ interface HomeProps {
 export default function Home({recipes, categories}: HomeProps) {
     return (
         <Layout>
-            <h1>Recipe Categories</h1>
-            {categories.map((category) => (
-                <div key={category} className="flex gap-2		">
-                    <h2 className="inline">
-                        <Link href={`/category/${encodeURIComponent(slugify(category, {lower: true}))}`}>
-                            {category}
-                        </Link>
-                    </h2>
-                </div>
-            ))}
+            <h1 className="text-4xl">Recipe Categories</h1>
+            <div className="mt-4 grid grid-cols-2 flex-col-reverse gap-4 md:grid-cols-3 lg:grid-cols-6">
 
+                {categories.map((category) => (
+                    <Link
+                        href={`/category/${encodeURIComponent(
+                            slugify(category, {lower: true})
+                        )}`}
+
+                        className="relative bg-gray-500 h-32 overflow-hidden"
+                        aria-label={category}>
+                        <Image
+                            className="bg-cover bg-center w-full overflow-auto absolute"
+                            src={
+                                'https://source.unsplash.com/random/?' +
+                                category +
+                                '&width=200&height=100'
+                            }
+                            alt={category}
+                            width={200}
+                            height={100}
+                        />
+                        <span
+                            className="absolute bottom-5 left-2 text-white bg-black py-1 px-2 opacity-70">
+                            {category}
+                        </span>
+                    </Link>
+                ))}
+            </div>
             <RecipeSearch recipes={recipes}/>
         </Layout>
     );
