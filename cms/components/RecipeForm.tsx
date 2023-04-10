@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import {Recipe} from '../../interfaces/Recipe';
-import Input from "./Fields/Input";
-import Select from "./Fields/Select";
-import MultiInput from "@/components/Fields/MultiInput";
+import InputField from "./Fields/Input";
+import SelectField from "./Fields/Select";
+import MultiInputField from "@/components/Fields/MultiInput";
 
 interface RecipeFormProps {
     onSubmit: (recipe: Recipe) => void;
@@ -115,33 +115,61 @@ const RecipeForm: React.FC<RecipeFormProps> = ({onSubmit, initialData, children}
         setImageUrl('');
         setType('');
     };
+
+    const handleImageUpload = async (file: File) => {
+        if (file) {
+            const data = new FormData();
+            data.append("file", file);
+
+            try {
+                const response = await fetch("/api/uploadImage", {
+                    method: "POST",
+                    body: data,
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    setImageUrl(result.filePath);
+                } else {
+                    console.error(result.message);
+                }
+            } catch (error) {
+                console.error("Error uploading image:", error);
+            }
+        }
+    };
+
     return (
         <form onSubmit={handleSubmit} className="space-y-4">
-            <Input title={"Title"} value={title} onChange={(e) => setTitle(e.target.value)}/>
-            <Input title={"Category"} value={category} onChange={(e) => setCategory(e.target.value)}/>
-            <MultiInput
+            <InputField title={"Title"} value={title} onChange={(e) => setTitle(e.target.value)}/>
+            <InputField title={"Category"} value={category} onChange={(e) => setCategory(e.target.value)}/>
+            <MultiInputField
                 onChangeInput={handleInstructionChange}
                 onRemoveInput={handleRemoveInstruction}
                 onAddInput={handleAddInstruction}
                 title={'Instructions'}
                 items={instructions}/>
 
-            <MultiInput
+            <MultiInputField
                 onChangeInput={handleIngredientChange}
                 onRemoveInput={handleRemoveIngredient}
                 onAddInput={handleAddIngredient}
                 title={'Ingredients'}
                 items={ingredients}/>
 
-            <MultiInput
+            <MultiInputField
                 onChangeInput={handleTagChange}
                 onRemoveInput={handleRemoveTag}
                 onAddInput={handleAddTag}
                 title={'Tags'}
                 items={tags}/>
+            {/*@ts-ignore*/}
+            <input type="file" accept="image/*" title={"Upload Image"}
+                   onChange={(e) => handleImageUpload(e.target.files[0])}/>
 
-            <Input title={"Image URL"} value={imageUrl} onChange={(e) => setImageUrl(e.target.value)}/>
-            <Select title={"Type"} value={type} onChange={(e:any) => setType(e.target.value)} options={[
+            {/*<Input title={"Image URL"} value={imageUrl} onChange={(e) => setImageUrl(e.target.value)}/>*/}
+            <SelectField title={"Type"} value={type} onChange={(e: any) => setType(e.target.value)} options={[
                 {value: "voorgerecht", label: "Voorgerecht"},
                 {value: "tussengerecht", label: "Tussengerecht"},
                 {value: "hoofdgerecht", label: "Hoofdgerecht"},
