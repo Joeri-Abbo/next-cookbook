@@ -1,3 +1,3 @@
 export interface Cards {
-    categories: string[];
+    tags: string[];
 }

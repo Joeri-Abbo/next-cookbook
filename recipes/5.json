@@ -1,37 +1,34 @@
 {
   "id": 5,
-  "title": "Shrimp Tacos with Mango Salsa",
-  "category": "Tacos",
+  "title": "Chicken Fajitas",
+  "category": "Main Dishes",
   "ingredients": [
-    "1 lb shrimp, peeled and deveined",
-    "1 tablespoon olive oil",
-    "1 teaspoon chili powder",
-    "1 teaspoon paprika",
-    "1/2 teaspoon cumin",
-    "Salt",
-    "Pepper",
-    "8 small flour tortillas",
-    "1 ripe mango, diced",
-    "1 small red onion, finely diced",
-    "1 jalapeno, seeds removed and minced",
-    "1/4 cup chopped cilantro",
-    "1 lime, juiced"
+    "1 lb boneless, skinless chicken breasts, sliced",
+    "1 large onion, sliced",
+    "1 large bell pepper, sliced",
+    "2 tbsp olive oil",
+    "1 tbsp chili powder",
+    "1 tsp ground cumin",
+    "1/2 tsp garlic powder",
+    "1/4 tsp salt",
+    "8 flour tortillas",
+    "Sour cream, shredded cheese, and salsa, for serving"
   ],
   "instructions": [
-    "In a medium bowl, combine shrimp, olive oil, chili powder, paprika, cumin, salt, and pepper. Toss to coat.",
-    "Heat a large skillet over medium-high heat. Cook shrimp in a single layer for 2-3 minutes per side, or until cooked through and opaque.",
-    "In a separate bowl, mix together mango, red onion, jalapeno, cilantro, and lime juice to create the mango salsa.",
-    "Warm tortillas in a dry skillet or in the microwave for a few seconds.",
-    "Assemble tacos by placing a few shrimp in each tortilla and topping with mango salsa.",
-    "Serve immediately."
+    "In a large skillet over medium-high heat, sauté chicken, onion, and bell pepper in olive oil until chicken is no longer pink and vegetables are tender.",
+    "Add chili powder, cumin, garlic powder, and salt, and stir to combine.",
+    "Warm tortillas according to package instructions.",
+    "Serve chicken and vegetable mixture in warm tortillas, topped with sour cream, shredded cheese, and salsa as desired."
   ],
   "tags": [
-    "seafood",
-    "summer",
-    "fresh"
+    "Mexican",
+    "Chicken"
   ],
-  "imageUrl": "https://source.unsplash.com/random/?Tacos",
-  "type": "main",
-  "preparationTime": 15,
-  "bakingTime": 15
+  "imageUrl": "https://www.example.com/chickenfajitas.jpg",
+  "type": "Cooked",
+  "preparationTime": 20,
+  "bakingTime": 0,
+  "description": "Nisi rutrum quisque nostra magna interdum tellus dolor diam aptent justo fermentum pretium est iaculis vehicula, rhoncus condimentum mauris dictumst quam tortor netus faucibus mi cursus tempus tempor vitae at. Maximus porttitor tempus fringilla rutrum hac facilisi vivamus, laoreet sapien fames purus sed primis. Parturient luctus fringilla condimentum nam sagittis per erat maximus tempus duis turpis malesuada litora proin, penatibus urna faucibus viverra sem odio eros pulvinar magnis lobortis sollicitudin mauris.",
+  "intro": "Nisi rutrum quisque nostra magna interdum tellus dolor diam aptent justo fermentum pretium est iaculis vehicula, rhoncus condimentum mauris dictumst quam tortor netus faucibus mi cursus tempus tempor vitae at. Maximus porttitor tempus fringilla rutrum hac facilisi vivamus, laoreet sapien fames purus sed primis. Parturient luctus fringilla condimentum nam sagittis per erat maximus tempus duis turpis malesuada litora proin, penatibus urna faucibus viverra sem odio eros pulvinar magnis lobortis sollicitudin mauris.",
+  "outro": "Nisi rutrum quisque nostra magna interdum tellus dolor diam aptent justo fermentum pretium est iaculis vehicula, rhoncus condimentum mauris dictumst quam tortor netus faucibus mi cursus tempus tempor vitae at. Maximus porttitor tempus fringilla rutrum hac facilisi vivamus, laoreet sapien fames purus sed primis. Parturient luctus fringilla condimentum nam sagittis per erat maximus tempus duis turpis malesuada litora proin, penatibus urna faucibus viverra sem odio eros pulvinar magnis lobortis sollicitudin mauris."
 }

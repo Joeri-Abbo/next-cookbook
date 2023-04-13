@@ -1,33 +1,34 @@
 {
   "id": 4,
-  "title": "Chicken Caesar Salad",
-  "category": "Salad",
+  "title": "Caesar Salad",
+  "category": "Salads",
   "ingredients": [
-    "2 boneless, skinless chicken breasts",
-    "1 head romaine lettuce, chopped",
-    "1/2 cup Caesar dressing",
-    "1/2 cup croutons",
-    "1/2 cup grated Parmesan cheese",
-    "1 tablespoon olive oil",
-    "Salt",
-    "Pepper"
+    "1 head romaine lettuce",
+    "1/4 cup grated Parmesan cheese",
+    "1/4 cup croutons",
+    "2 tbsp olive oil",
+    "1 tbsp lemon juice",
+    "1 tsp Dijon mustard",
+    "1 tsp Worcestershire sauce",
+    "1 clove garlic, minced",
+    "Salt and black pepper"
   ],
   "instructions": [
-    "Preheat a grill or grill pan over medium-high heat.",
-    "Season chicken breasts with salt and pepper.",
-    "Grill chicken for 5-7 minutes per side, or until cooked through and an internal temperature of 165°F (74°C) is reached.",
-    "Remove chicken from grill and let rest for 5 minutes. Then, slice into strips.",
-    "In a large bowl, combine chopped romaine lettuce and Caesar dressing. Toss until well coated.",
-    "Add grilled chicken, croutons, and Parmesan cheese to the salad. Toss to combine.",
+    "Wash and dry lettuce, and tear into bite-size pieces.",
+    "In a small bowl, whisk together olive oil, lemon juice, mustard, Worcestershire sauce, garlic, salt, and pepper.",
+    "Toss lettuce with dressing until well coated.",
+    "Top with grated Parmesan cheese and croutons.",
     "Serve immediately."
   ],
   "tags": [
-    "healthy",
-    "quick",
-    "easy"
+    "Salad",
+    "Vegetarian"
   ],
-  "imageUrl": "https://source.unsplash.com/random/?Chicken Caesar Salad",
-  "type": "main",
-  "preparationTime": 15,
-  "bakingTime": 15
+  "imageUrl": "https://www.example.com/caesarsalad.jpg",
+  "type": "Assembled",
+  "preparationTime": 10,
+  "bakingTime": 0,
+  "description": "Nisi rutrum quisque nostra magna interdum tellus dolor diam aptent justo fermentum pretium est iaculis vehicula, rhoncus condimentum mauris dictumst quam tortor netus faucibus mi cursus tempus tempor vitae at. Maximus porttitor tempus fringilla rutrum hac facilisi vivamus, laoreet sapien fames purus sed primis. Parturient luctus fringilla condimentum nam sagittis per erat maximus tempus duis turpis malesuada litora proin, penatibus urna faucibus viverra sem odio eros pulvinar magnis lobortis sollicitudin mauris.",
+  "intro": "Nisi rutrum quisque nostra magna interdum tellus dolor diam aptent justo fermentum pretium est iaculis vehicula, rhoncus condimentum mauris dictumst quam tortor netus faucibus mi cursus tempus tempor vitae at. Maximus porttitor tempus fringilla rutrum hac facilisi vivamus, laoreet sapien fames purus sed primis. Parturient luctus fringilla condimentum nam sagittis per erat maximus tempus duis turpis malesuada litora proin, penatibus urna faucibus viverra sem odio eros pulvinar magnis lobortis sollicitudin mauris.",
+  "outro": "Nisi rutrum quisque nostra magna interdum tellus dolor diam aptent justo fermentum pretium est iaculis vehicula, rhoncus condimentum mauris dictumst quam tortor netus faucibus mi cursus tempus tempor vitae at. Maximus porttitor tempus fringilla rutrum hac facilisi vivamus, laoreet sapien fames purus sed primis. Parturient luctus fringilla condimentum nam sagittis per erat maximus tempus duis turpis malesuada litora proin, penatibus urna faucibus viverra sem odio eros pulvinar magnis lobortis sollicitudin mauris."
 }

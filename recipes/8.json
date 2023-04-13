@@ -23,9 +23,15 @@
     "Meanwhile, cook spaghetti according to package instructions.",
     "Serve bolognese sauce over cooked spaghetti, and sprinkle with Parmesan cheese."
   ],
-  "tags": ["Pasta", "Meat"],
+  "tags": [
+    "Pasta",
+    "Meat"
+  ],
   "imageUrl": "https://www.example.com/spaghetti.jpg",
   "type": "Cooked",
   "preparationTime": 15,
-  "bakingTime": null
+  "bakingTime": 0,
+  "description": "Nisi rutrum quisque nostra magna interdum tellus dolor diam aptent justo fermentum pretium est iaculis vehicula, rhoncus condimentum mauris dictumst quam tortor netus faucibus mi cursus tempus tempor vitae at. Maximus porttitor tempus fringilla rutrum hac facilisi vivamus, laoreet sapien fames purus sed primis. Parturient luctus fringilla condimentum nam sagittis per erat maximus tempus duis turpis malesuada litora proin, penatibus urna faucibus viverra sem odio eros pulvinar magnis lobortis sollicitudin mauris.",
+  "intro": "Nisi rutrum quisque nostra magna interdum tellus dolor diam aptent justo fermentum pretium est iaculis vehicula, rhoncus condimentum mauris dictumst quam tortor netus faucibus mi cursus tempus tempor vitae at. Maximus porttitor tempus fringilla rutrum hac facilisi vivamus, laoreet sapien fames purus sed primis. Parturient luctus fringilla condimentum nam sagittis per erat maximus tempus duis turpis malesuada litora proin, penatibus urna faucibus viverra sem odio eros pulvinar magnis lobortis sollicitudin mauris.",
+  "outro": "Nisi rutrum quisque nostra magna interdum tellus dolor diam aptent justo fermentum pretium est iaculis vehicula, rhoncus condimentum mauris dictumst quam tortor netus faucibus mi cursus tempus tempor vitae at. Maximus porttitor tempus fringilla rutrum hac facilisi vivamus, laoreet sapien fames purus sed primis. Parturient luctus fringilla condimentum nam sagittis per erat maximus tempus duis turpis malesuada litora proin, penatibus urna faucibus viverra sem odio eros pulvinar magnis lobortis sollicitudin mauris."
 }

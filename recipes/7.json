@@ -1,32 +1,37 @@
 {
   "id": 7,
-  "title": "Classic Chocolate Chip Cookies",
-  "category": "Desserts",
+  "title": "Beef Stroganoff",
+  "category": "Main Dishes",
   "ingredients": [
-    "2 1/4 cups all-purpose flour",
-    "1 tsp baking soda",
-    "1 tsp salt",
-    "1 cup unsalted butter, room temperature",
-    "3/4 cup white sugar",
-    "3/4 cup brown sugar",
-    "2 large eggs",
-    "2 tsp vanilla extract",
-    "2 cups semisweet chocolate chips"
+    "1 lb beef sirloin, sliced into thin strips",
+    "1 large onion, chopped",
+    "2 cloves garlic, minced",
+    "1 cup sliced mushrooms",
+    "2 tbsp butter",
+    "1 tbsp all-purpose flour",
+    "1 cup beef broth",
+    "1/2 cup sour cream",
+    "1 tbsp Dijon mustard",
+    "Salt and black pepper",
+    "Egg noodles, for serving"
   ],
   "instructions": [
-    "Preheat oven to 375°F (190°C).",
-    "In a medium bowl, whisk together flour, baking soda, and salt.",
-    "In a large bowl, beat butter, white sugar, and brown sugar until creamy.",
-    "Add eggs and vanilla extract, and beat until well combined.",
-    "Gradually add flour mixture to butter mixture, stirring until just combined.",
-    "Stir in chocolate chips.",
-    "Drop dough by rounded tablespoonfuls onto ungreased baking sheets.",
-    "Bake for 10-12 minutes, or until lightly golden brown.",
-    "Cool on baking sheets for 2 minutes before transferring to wire racks to cool completely."
+    "In a large skillet over medium-high heat, brown beef, onion, garlic, and mushrooms in butter.",
+    "Stir in flour until well combined.",
+    "Gradually stir in beef broth, and bring to a simmer.",
+    "Reduce heat to low, and stir in sour cream, mustard, salt, and pepper.",
+    "Simmer for 10-15 minutes, stirring occasionally.",
+    "Serve over cooked egg noodles."
   ],
-  "tags": ["Chocolate", "Cookies"],
-  "imageUrl": "https://www.example.com/cookie.jpg",
-  "type": "Baked",
+  "tags": [
+    "Beef",
+    "Comfort Food"
+  ],
+  "imageUrl": "https://www.example.com/beefstroganoff.jpg",
+  "type": "Cooked",
   "preparationTime": 20,
-  "bakingTime": 10
+  "bakingTime": 0,
+  "description": "Nisi rutrum quisque nostra magna interdum tellus dolor diam aptent justo fermentum pretium est iaculis vehicula, rhoncus condimentum mauris dictumst quam tortor netus faucibus mi cursus tempus tempor vitae at. Maximus porttitor tempus fringilla rutrum hac facilisi vivamus, laoreet sapien fames purus sed primis. Parturient luctus fringilla condimentum nam sagittis per erat maximus tempus duis turpis malesuada litora proin, penatibus urna faucibus viverra sem odio eros pulvinar magnis lobortis sollicitudin mauris.",
+  "intro": "Nisi rutrum quisque nostra magna interdum tellus dolor diam aptent justo fermentum pretium est iaculis vehicula, rhoncus condimentum mauris dictumst quam tortor netus faucibus mi cursus tempus tempor vitae at. Maximus porttitor tempus fringilla rutrum hac facilisi vivamus, laoreet sapien fames purus sed primis. Parturient luctus fringilla condimentum nam sagittis per erat maximus tempus duis turpis malesuada litora proin, penatibus urna faucibus viverra sem odio eros pulvinar magnis lobortis sollicitudin mauris.",
+  "outro": "Nisi rutrum quisque nostra magna interdum tellus dolor diam aptent justo fermentum pretium est iaculis vehicula, rhoncus condimentum mauris dictumst quam tortor netus faucibus mi cursus tempus tempor vitae at. Maximus porttitor tempus fringilla rutrum hac facilisi vivamus, laoreet sapien fames purus sed primis. Parturient luctus fringilla condimentum nam sagittis per erat maximus tempus duis turpis malesuada litora proin, penatibus urna faucibus viverra sem odio eros pulvinar magnis lobortis sollicitudin mauris."
 }

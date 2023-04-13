@@ -1,3 +1,3 @@
 export interface Card {
-    category: string;
+    tag: string;
 }
