@@ -8,9 +8,7 @@ const base_url = process.env.BASE_URL;
 const Pinterest = ({asPath}: asPath) => (
     <div>
         <Link href={`https://pinterest.com/pin/create/button/?url=${base_url}${asPath}`}>
-            <a>
-                <PinterestIcon className="w-6 h-6 hover:scale-125 transform-gpu fill-red-600 cursor-pointer"/>
-            </a>
+            <PinterestIcon className="w-6 h-6 hover:scale-125 transform-gpu fill-red-600 cursor-pointer"/>
         </Link>
     </div>
 );

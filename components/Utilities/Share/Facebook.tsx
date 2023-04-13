@@ -8,9 +8,7 @@ const base_url = process.env.BASE_URL;
 const Facebook = ({asPath}: asPath) => (
     <div>
         <Link href={`https://www.facebook.com/sharer/sharer.php?u=${base_url}${asPath}`}>
-            <a>
-                <FacebookIcon className="w-6 h-6 hover:scale-125 transform-gpu fill-blue-700 cursor-pointer"/>
-            </a>
+            <FacebookIcon className="w-6 h-6 hover:scale-125 transform-gpu fill-blue-700 cursor-pointer"/>
         </Link>
     </div>
 );
