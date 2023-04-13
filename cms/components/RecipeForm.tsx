@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Recipe} from '../../interfaces/Recipe';
 import InputField from "./Fields/Input";
+import FileField from "./Fields/File";
 import TextareaField from "./Fields/Textarea";
 import SelectField from "./Fields/Select";
 import NumberField from "./Fields/Number";
@@ -203,10 +204,8 @@ const RecipeForm: React.FC<RecipeFormProps> = ({onSubmit, initialData, children}
                 title={'Tags'}
                 items={tags}/>
             {/*@ts-ignore*/}
-            <input onChange={(e) => handleImageUpload(e.target.files[0])} type="file" accept="image/*"
-                   title={"Upload Image"}/>
-
-            {/*<Input title={"Image URL"} value={imageUrl} onChange={(e) => setImageUrl(e.target.value)}/>*/}
+            <FileField onChange={(e) => handleImageUpload(e.target.files[0])} value={imageUrl}
+                       title={"Upload Image"}/>
             <SelectField title={"Type"} value={type} onChange={(e: any) => setType(e.target.value)} options={[
                 {value: "voorgerecht", label: "Voorgerecht"},
                 {value: "tussengerecht", label: "Tussengerecht"},
