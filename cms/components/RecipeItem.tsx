@@ -25,7 +25,7 @@ const RecipeItem: React.FC<RecipeItemProps> = ({recipe, onDelete, onUpdate}) => 
             <div className="rounded border p-4 shadow">
                 <RecipeForm onSubmit={handleUpdate} initialData={recipe}>
                     <button
-                        className="mt-4 ml-2 bg-red-500 py-1 px-3 text-white"
+                        className="ml-2 mt-4 bg-red-500 px-3 py-1 text-white"
                         onClick={() => setIsEditing(false)}
                     >
                         Cancel
@@ -43,10 +43,10 @@ const RecipeItem: React.FC<RecipeItemProps> = ({recipe, onDelete, onUpdate}) => 
             <h2 className="mb-2 text-xl font-bold">{recipe.title}</h2>
             <p>Category: {recipe.category}</p>
             <p>Type: {recipe.type}</p>
-            <button className="mt-4 mr-2 bg-blue-500 py-1 px-3 text-white" onClick={() => setIsEditing(true)}>
+            <button className="mr-2 mt-4 bg-blue-500 px-3 py-1 text-white" onClick={() => setIsEditing(true)}>
                 Edit
             </button>
-            <button className="mt-4 bg-red-500 py-1 px-3 text-white" onClick={handleDelete}>
+            <button className="mt-4 bg-red-500 px-3 py-1 text-white" onClick={handleDelete}>
                 Delete
             </button>
         </div>

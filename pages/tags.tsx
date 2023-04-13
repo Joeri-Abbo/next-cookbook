@@ -9,7 +9,7 @@ import slugify from "slugify";
 export default function Tags({tags}: TagsProps) {
     return (
         <Layout>
-            <h1 className="text-4xl text-center	">Recipes</h1>
+            <h1 className="text-center text-4xl">Recipes</h1>
             <ul>
                 {tags && tags.map((tag, key) => (
                     <li key={key}>

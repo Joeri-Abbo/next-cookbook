@@ -215,7 +215,7 @@ const RecipeForm: React.FC<RecipeFormProps> = ({onSubmit, initialData, children}
             ]}/>
             <button
                 type="submit"
-                className="mt-4 bg-blue-500 py-1 px-3 text-white"
+                className="mt-4 bg-blue-500 px-3 py-1 text-white"
             >
                 {initialData ? 'Update' : 'Add'} Recipe
             </button>

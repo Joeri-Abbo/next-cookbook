@@ -20,7 +20,7 @@ const Search: React.FC<RecipeSearchProps> = ({recipes}) => {
                 type="text"
                 placeholder="Search by title..."
                 value={searchTerm}
-                className="text-5xl focus:outline-none text-center w-full"
+                className="w-full text-center text-5xl focus:outline-none"
                 onChange={(e) => setSearchTerm(e.target.value)}
             />
             <Cards recipes={filteredRecipes}/>

@@ -24,7 +24,7 @@ const Card = ({category}: Card) => (
             className="absolute w-full overflow-auto bg-cover bg-center"
         />
         <span
-            className="absolute bottom-5 left-2 bg-black py-1 px-2 text-white opacity-70">
+            className="absolute bottom-5 left-2 bg-black px-2 py-1 text-white opacity-70">
                             {category}
                         </span>
     </Link>

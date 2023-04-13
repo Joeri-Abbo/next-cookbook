@@ -8,7 +8,7 @@ import {HomeProps} from "../interfaces/Pages/HomeProps";
 export default function Home({recipes, categories}: HomeProps) {
     return (
         <Layout>
-            <h1 className="text-4xl text-center	">Recipe Categories</h1>
+            <h1 className="text-center text-4xl">Recipe Categories</h1>
             <Categories categories={categories}/>
             <Search recipes={recipes}/>
         </Layout>

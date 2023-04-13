@@ -7,7 +7,7 @@ import {RecipesProps} from "../interfaces/Pages/RecipesProps";
 export default function Recipes({recipes}: RecipesProps) {
     return (
         <Layout>
-            <h1 className="text-4xl text-center	">Recipes</h1>
+            <h1 className="text-center text-4xl">Recipes</h1>
             <Search recipes={recipes}/>
         </Layout>
     );
