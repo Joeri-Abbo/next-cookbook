@@ -21,6 +21,9 @@ const RecipeForm: React.FC<RecipeFormProps> = ({onSubmit, initialData, children}
     const [type, setType] = useState('');
     const [preparationTime, setPreparationTime] = useState(0);
     const [bakingTime, setBakingTime] = useState(0);
+    const [description, setDescription] = useState("");
+    const [intro, setIntro] = useState("");
+    const [outro, setOutro] = useState("");
 
     useEffect(() => {
         if (initialData) {
@@ -33,6 +36,9 @@ const RecipeForm: React.FC<RecipeFormProps> = ({onSubmit, initialData, children}
             setType(initialData.type);
             setPreparationTime(initialData.preparationTime ?? 0);
             setBakingTime(initialData.bakingTime ?? 0);
+            setDescription(initialData.description ?? '');
+            setIntro(initialData.intro ?? '');
+            setOutro(initialData.outro ?? '');
         }
     }, [initialData]);
     const handleAddInstruction = () => {
@@ -96,6 +102,9 @@ const RecipeForm: React.FC<RecipeFormProps> = ({onSubmit, initialData, children}
             type,
             preparationTime,
             bakingTime,
+            description,
+            intro,
+            outro
         };
 
         if (initialData) {
@@ -123,6 +132,9 @@ const RecipeForm: React.FC<RecipeFormProps> = ({onSubmit, initialData, children}
         setType('');
         setPreparationTime(0);
         setBakingTime(0);
+        setDescription('')
+        setIntro('')
+        setOutro('')
     };
 
     const handleImageUpload = async (file: File) => {
@@ -153,7 +165,9 @@ const RecipeForm: React.FC<RecipeFormProps> = ({onSubmit, initialData, children}
         <form onSubmit={handleSubmit} className="space-y-4">
             <InputField title={"Title"} value={title} onChange={(e) => setTitle(e.target.value)}/>
             <InputField title={"Category"} value={category} onChange={(e) => setCategory(e.target.value)}/>
-
+            <InputField title={"Description"} value={description} onChange={(e) => setDescription(e.target.value)}/>
+            <InputField title={"Intro"} value={intro} onChange={(e) => setIntro(e.target.value)}/>
+            <InputField title={"Outro"} value={outro} onChange={(e) => setOutro(e.target.value)}/>
             <div className="flex w-full gap-2">
                 <div className="w-1/2">
                     {/*@ts-ignore*/}

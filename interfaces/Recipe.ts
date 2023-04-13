@@ -9,4 +9,7 @@ export interface Recipe {
     type: string;
     preparationTime: number | null;
     bakingTime: number | null;
+    description: string;
+    intro: string;
+    outro: string;
 }

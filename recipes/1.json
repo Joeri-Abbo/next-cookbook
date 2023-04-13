@@ -29,5 +29,8 @@
   "imageUrl": "https://source.unsplash.com/random/?pizza",
   "type": "main",
   "preparationTime": 15,
-  "bakingTime": "11"
+  "bakingTime": "11",
+  "description": "Description",
+  "intro": "Intro",
+  "outro": "Outro"
 }
