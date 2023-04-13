@@ -39,10 +39,33 @@ export function getRecipeBySlug(category: string, slug: string): Recipe | null {
     return recipe || null;
 }
 
+export function getRecipeById(id: number): Recipe | null {
+    const allRecipes = getAllRecipes();
+    const recipe = allRecipes.find(
+        (recipe) => recipe.id === id
+    );
+    return recipe || null;
+}
+
 
 export function getRecipesByCategory(slugifiedCategory: string): Recipe[] {
     const allRecipes = getAllRecipes();
     return allRecipes.filter(
         (recipe) => slugify(recipe.category, {lower: true}) === slugifiedCategory
     );
+}
+
+export function getRecipesByRelatedById(id: number): Recipe[] {
+    const recipe = getRecipeById(id)
+    if (!recipe) {
+        return []
+    }
+
+    return getRecipesByRelatedByIdAndCategory(id, recipe.category)
+}
+
+export function getRecipesByRelatedByIdAndCategory(id: number, category: string): Recipe[] {
+    return getRecipesByCategory(slugify(category, {lower: true})).filter(
+        (r) => r.id !== id
+    )
 }

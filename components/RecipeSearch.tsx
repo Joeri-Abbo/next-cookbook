@@ -3,6 +3,7 @@ import Link from "next/link";
 import slugify from "slugify";
 import LazyImage from "./LazyImage";
 import {RecipeSearchProps} from "../interfaces/RecipeSearchProps";
+import Card from "./Recipe/card";
 
 const RecipeSearch: React.FC<RecipeSearchProps> = ({recipes}) => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -23,21 +24,7 @@ const RecipeSearch: React.FC<RecipeSearchProps> = ({recipes}) => {
             />
             <div className="mt-4 grid grid-cols-2 flex-col-reverse gap-4 md:grid-cols-2 lg:grid-cols-4">
                 {filteredRecipes.map((recipe) => (
-                    <Link
-                        key={recipe.id}
-                        href={`/recipe/${encodeURIComponent(recipe.category)}/${slugify(recipe.title, {
-                            lower: true,
-                        })}`}
-                    >
-                        <LazyImage
-                            src={
-                                recipe.imageUrl
-                            }
-                            alt={recipe.title}
-                            className="w-full"
-                        />
-                        {recipe.title}
-                    </Link>
+                    <Card recipe={recipe}/>
                 ))}
             </div>
         </div>

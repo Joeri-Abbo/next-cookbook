@@ -4,7 +4,6 @@ export default function Document() {
     return (
         <Html lang="en">
             <Head title={"Cookbook | CMS"}>
-                <title>Cookbook | CMS</title>
             </Head>
             <body>
             <Main/>

@@ -2,21 +2,22 @@ import React, {ReactNode} from 'react'
 import Head from 'next/head'
 import Socials from "./Socials";
 import {ChildrenTitle} from "../interfaces/ChildrenTitle";
+import Link from "next/link";
 
 
-const Layout = ({children, title = 'Cookbook'}: ChildrenTitle) => (
+const Layout = ({children, title = 'Page'}: ChildrenTitle) => (
     <div>
         <Head>
-            <title>{title}</title>
+            <title>{title + " | Cookbook"}</title>
             <meta charSet="utf-8"/>
             <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
         </Head>
         <header
             className="h-15 relative sticky top-0 z-30 w-full bg-white px-2 py-4 shadow-sm shadow-xl dark:bg-black sm:px-4">
             <div className="z-100 flex items-center justify-between px-2 py-2 sm:px-3">
-                <div>
+                <Link href={"/"}>
                     Cookbook
-                </div>
+                </Link>
                 <div className="flex items-center gap-6">
                     <Socials/>
                 </div>

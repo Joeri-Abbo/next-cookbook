@@ -1,12 +1,19 @@
 import {GetStaticPaths, GetStaticProps} from 'next';
 import {useRouter} from 'next/router';
-import {getAllRecipes, getRecipeBySlug} from '../../../lib/recipes';
+import {
+    getAllRecipes,
+    getRecipeBySlug,
+    getRecipesByRelatedByIdAndCategory
+} from '../../../lib/recipes';
 import slugify from 'slugify';
-import Items from "../../../components/Utilities/Share/Items";
+import Share from "../../../components/Utilities/Share/Items";
 import {RecipeDetailPageProps} from "../../../interfaces/RecipeDetailPageProps";
+import Layout from "../../../components/Layout";
+import Card from "../../../components/Recipe/card";
+import React from "react";
 
 
-export default function RecipeDetailPage({recipe, categoryName}: RecipeDetailPageProps) {
+export default function RecipeDetailPage({recipe, categoryName, relatedRecipes}: RecipeDetailPageProps) {
     const router = useRouter();
 
     if (router.isFallback) {
@@ -14,8 +21,11 @@ export default function RecipeDetailPage({recipe, categoryName}: RecipeDetailPag
     }
 
     return (
-        <div>
+        <Layout title={recipe.title}>
             <h1>{recipe.title}</h1>
+            <h1>{recipe.description}</h1>
+            <h1>{recipe.intro}</h1>
+            <h1>{recipe.outro}</h1>
             <h2>Category: {categoryName}</h2>
             <h3>Type: {recipe.type}</h3>
             <h3>preparationTime: {recipe.preparationTime}</h3>
@@ -36,7 +46,6 @@ export default function RecipeDetailPage({recipe, categoryName}: RecipeDetailPag
                     </li>
                 ))}
             </ol>
-            it pull
             <ul className="list-disc">
                 {recipe.tags && recipe.tags.map((tag, key) => (
                     <li key={key}>
@@ -44,8 +53,14 @@ export default function RecipeDetailPage({recipe, categoryName}: RecipeDetailPag
                     </li>
                 ))}
             </ul>
-            <Items asPath={router.asPath} text={"hallo"}/>
-        </div>
+            <Share asPath={router.asPath} text={"hallo"}/>
+
+            <ul className="list-disc">
+                {relatedRecipes && relatedRecipes.map((recipe, key) => (
+                    <Card recipe={recipe}/>
+                ))}
+            </ul>
+        </Layout>
     );
 }
 
@@ -81,6 +96,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
         props: {
             recipe,
             categoryName: decodedCategory,
+            relatedRecipes: getRecipesByRelatedByIdAndCategory(recipe.id, decodedCategory)
         },
     };
 };
