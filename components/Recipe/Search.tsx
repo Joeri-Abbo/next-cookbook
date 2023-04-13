@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import Link from "next/link";
 import slugify from "slugify";
-import LazyImage from "./LazyImage";
-import {RecipeSearchProps} from "../interfaces/RecipeSearchProps";
-import Card from "./Recipe/card";
-import Cards from "./Recipe/cards";
+import LazyImage from "../Utilities/LazyImage";
+import {RecipeSearchProps} from "../../interfaces/Recipe/RecipeSearchProps";
+import Card from "./card";
+import Cards from "./cards";
 
-const RecipeSearch: React.FC<RecipeSearchProps> = ({recipes}) => {
+const Search: React.FC<RecipeSearchProps> = ({recipes}) => {
     const [searchTerm, setSearchTerm] = useState('');
 
     const filteredRecipes = recipes.filter((recipe) =>
@@ -28,4 +28,4 @@ const RecipeSearch: React.FC<RecipeSearchProps> = ({recipes}) => {
     );
 };
 
-export default RecipeSearch;
+export default Search;

@@ -1,5 +1,5 @@
 import {Recipe} from "./Recipe";
 
-export interface cardRecipe {
+export interface card {
     recipe: Recipe
 }

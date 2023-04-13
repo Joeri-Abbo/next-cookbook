@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import {Recipe} from '../interfaces/Recipe';
+import {Recipe} from '../interfaces/Recipe/Recipe';
 import slugify from "slugify";
 
 const recipesDirectory = path.join(process.cwd(), 'recipes');

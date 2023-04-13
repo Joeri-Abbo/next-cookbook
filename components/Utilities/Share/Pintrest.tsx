@@ -1,7 +1,7 @@
 import React, {ReactNode} from "react";
 import Link from "next/link";
 import PintrestIcon from "../../../public/icons/pinterest.svg"
-import {asPath} from "../../../interfaces/asPath";
+import {asPath} from "../../../interfaces/Utilities/asPath";
 
 const base_url = process.env.BASE_URL;
 

@@ -2,9 +2,9 @@ import {GetStaticPaths, GetStaticProps} from 'next';
 import {useRouter} from 'next/router';
 import {getAllRecipes, getRecipesByCategory} from '../../lib/recipes';
 import slugify from "slugify";
-import RecipeSearch from "../../components/RecipeSearch";
+import Search from "../../components/Recipe/Search";
 import Layout from "../../components/Layout";
-import {CategoryPageProps} from "../../interfaces/CategoryPageProps";
+import {CategoryPageProps} from "../../interfaces/Pages/CategoryPageProps";
 
 
 export default function CategoryPage({recipes, categoryName}: CategoryPageProps) {
@@ -17,7 +17,7 @@ export default function CategoryPage({recipes, categoryName}: CategoryPageProps)
     return (
         <Layout>
             <h1>Recipes in {categoryName} category</h1>
-            <RecipeSearch recipes={recipes}/>
+            <Search recipes={recipes}/>
         </Layout>
     );
 }

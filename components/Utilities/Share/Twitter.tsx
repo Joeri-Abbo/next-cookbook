@@ -1,7 +1,7 @@
 import React, {ReactNode} from "react";
 import Link from "next/link";
 import TwitterIcon from "../../../public/icons/twitter.svg"
-import {asPathText} from "../../../interfaces/asPathText";
+import {asPathText} from "../../../interfaces/Utilities/asPathText";
 
 const base_url = process.env.BASE_URL;
 

@@ -1,10 +1,10 @@
 import Link from "next/link";
 import slugify from "slugify";
-import LazyImage from "../LazyImage";
+import LazyImage from "../Utilities/LazyImage";
 import React from "react";
-import {cardRecipe} from "../../interfaces/cardRecipe";
+import {card} from "../../interfaces/Recipe/Card";
 
-const Card = ({recipe}: cardRecipe) => (
+const Card = ({recipe}: card) => (
     <div className="bg-amber-500">
         <Link
             key={recipe.id}

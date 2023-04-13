@@ -2,7 +2,7 @@
 import {NextApiRequest, NextApiResponse} from 'next';
 import fs from 'fs';
 import path from 'path';
-import {Recipe} from '../../../interfaces/Recipe';
+import {Recipe} from '../../../interfaces/Recipe/Recipe';
 
 const dataDirectory = path.join(process.cwd(), '../', 'recipes');
 const getRecipeFilePath = (id: number) => path.join(dataDirectory, `${id}.json`);

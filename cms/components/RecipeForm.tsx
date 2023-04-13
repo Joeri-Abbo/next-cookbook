@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Recipe} from '../../interfaces/Recipe';
+import {Recipe} from '../../interfaces/Recipe/Recipe';
 import InputField from "./Fields/Input";
 import FileField from "./Fields/File";
 import TextareaField from "./Fields/Textarea";

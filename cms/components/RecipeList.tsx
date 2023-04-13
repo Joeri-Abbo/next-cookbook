@@ -1,5 +1,5 @@
 import React from 'react';
-import {Recipe} from '../../interfaces/Recipe';
+import {Recipe} from '../../interfaces/Recipe/Recipe';
 import RecipeItem from './RecipeItem';
 
 interface RecipeListProps {

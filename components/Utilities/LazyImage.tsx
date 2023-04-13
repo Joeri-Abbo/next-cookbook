@@ -1,5 +1,5 @@
 import {useEffect, useRef, useState} from 'react';
-import {LazyImageProps} from "../interfaces/LazyImage";
+import {LazyImageProps} from "../../interfaces/Utilities/LazyImage";
 
 const LazyImage: React.FC<LazyImageProps> = ({src, alt, className}) => {
     const [loadedSrc, setLoadedSrc] = useState<string | null>(null);

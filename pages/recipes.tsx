@@ -2,17 +2,17 @@ import {GetStaticProps} from 'next';
 import {getAllRecipes} from '../lib/recipes';
 import Link from "next/link";
 import slugify from "slugify";
-import RecipeSearch from '../components/RecipeSearch';
+import Search from '../components/Recipe/Search';
 import Layout from "../components/Layout";
-import LazyImage from "../components/LazyImage";
-import {HomeProps} from "../interfaces/HomeProps";
+import LazyImage from "../components/Utilities/LazyImage";
+import {HomeProps} from "../interfaces/Pages/HomeProps";
 
 
 export default function Home({recipes, categories}: HomeProps) {
     return (
         <Layout>
             <h1 className="text-4xl text-center	">Recipes</h1>
-            <RecipeSearch recipes={recipes}/>
+            <Search recipes={recipes}/>
         </Layout>
     );
 }

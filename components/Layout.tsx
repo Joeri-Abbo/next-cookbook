@@ -1,7 +1,7 @@
 import React, {ReactNode} from 'react'
 import Head from 'next/head'
-import Socials from "./Socials";
-import {ChildrenTitle} from "../interfaces/ChildrenTitle";
+import Socials from "./Utilities/Socials";
+import {ChildrenTitle} from "../interfaces/Utilities/ChildrenTitle";
 import Link from "next/link";
 
 

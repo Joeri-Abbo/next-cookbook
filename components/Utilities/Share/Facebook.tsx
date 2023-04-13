@@ -1,7 +1,7 @@
 import React, {ReactNode} from "react";
 import Link from "next/link";
 import FacebookIcon from "../../../public/icons/facebook.svg"
-import {asPath} from "../../../interfaces/asPath";
+import {asPath} from "../../../interfaces/Utilities/asPath";
 
 const base_url = process.env.BASE_URL;
 

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Recipe} from '../../interfaces/Recipe';
+import {Recipe} from '../../interfaces/Recipe/Recipe';
 import RecipeForm from './RecipeForm';
 
 interface RecipeItemProps {

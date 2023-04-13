@@ -7,7 +7,7 @@ import {
 } from '../../../lib/recipes';
 import slugify from 'slugify';
 import Share from "../../../components/Utilities/Share/Items";
-import {RecipeDetailPageProps} from "../../../interfaces/RecipeDetailPageProps";
+import {RecipeDetailPageProps} from "../../../interfaces/Pages/RecipeDetailPageProps";
 import Layout from "../../../components/Layout";
 import Card from "../../../components/Recipe/card";
 import React from "react";

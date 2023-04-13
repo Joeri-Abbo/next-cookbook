@@ -2,7 +2,7 @@ import type {NextPage} from 'next';
 import {useState, useEffect} from 'react';
 import RecipeForm from '../components/RecipeForm';
 import RecipeItem from '../components/RecipeItem';
-import {Recipe} from '../../interfaces/Recipe';
+import {Recipe} from '../../interfaces/Recipe/Recipe';
 
 const Home: NextPage = () => {
     const [recipes, setRecipes] = useState<Recipe[]>([]);
