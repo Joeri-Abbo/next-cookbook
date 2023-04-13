@@ -1,17 +1,18 @@
-import React, {ReactNode} from "react";
+import React from "react";
 import Link from "next/link";
-import TwitterIcon from "../../../public/icons/twitter.svg"
-import {asPathText} from "../../../interfaces/Utilities/asPathText";
+import TwitterIcon from "../../../public/icons/twitter.svg";
+import { asPathText } from "../../../interfaces/Utilities/asPathText";
 
 const base_url = process.env.BASE_URL;
 
-const Twitter = ({asPath, text}: asPathText) => (
+const Twitter = ({ asPath, text }: asPathText) => (
     <div>
-        <Link href={"whatsapp://send?text=" + base_url + asPath + text}>
-            {"whatsapp://send?text=" + base_url + asPath + text}
-            <TwitterIcon className={"w-6 h-6 hover:scale-125 transform-gpu fill-blue-500"}/>
+        <Link href={`https://twitter.com/intent/tweet?text=${text}&url=${base_url}${asPath}`}>
+            <a>
+                <TwitterIcon className="w-6 h-6 hover:scale-125 transform-gpu fill-blue-500 cursor-pointer" />
+            </a>
         </Link>
     </div>
-)
+);
 
-export default Twitter
+export default Twitter;
