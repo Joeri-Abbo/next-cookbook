@@ -4,7 +4,6 @@ import Search from '../components/Recipe/Search';
 import Layout from "../components/Layout";
 import {RecipesProps} from "../interfaces/Pages/RecipesProps";
 
-
 export default function Recipes({recipes}: RecipesProps) {
     return (
         <Layout>

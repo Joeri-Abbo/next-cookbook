@@ -6,7 +6,6 @@ import React from "react";
 import Link from "next/link";
 import slugify from "slugify";
 
-
 export default function Tags({tags}: TagsProps) {
     return (
         <Layout>
@@ -31,8 +30,6 @@ export default function Tags({tags}: TagsProps) {
 
 export const getStaticProps: GetStaticProps = async () => {
     const tags = getTags();
-
-
     return {
         props: {
             tags,
