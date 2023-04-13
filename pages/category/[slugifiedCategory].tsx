@@ -1,15 +1,11 @@
 import {GetStaticPaths, GetStaticProps} from 'next';
 import {useRouter} from 'next/router';
-import {Recipe} from '../../interfaces/Recipe';
 import {getAllRecipes, getRecipesByCategory} from '../../lib/recipes';
 import slugify from "slugify";
 import RecipeSearch from "../../components/RecipeSearch";
 import Layout from "../../components/Layout";
+import {CategoryPageProps} from "../../interfaces/CategoryPageProps";
 
-interface CategoryPageProps {
-    recipes: Recipe[];
-    categoryName: string;
-}
 
 export default function CategoryPage({recipes, categoryName}: CategoryPageProps) {
     const router = useRouter();

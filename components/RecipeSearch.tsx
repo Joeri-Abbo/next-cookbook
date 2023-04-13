@@ -1,13 +1,8 @@
 import React, {useState} from 'react';
-import {Recipe} from '../interfaces/Recipe';
 import Link from "next/link";
 import slugify from "slugify";
-import Image from "next/image";
 import LazyImage from "./LazyImage";
-
-interface RecipeSearchProps {
-    recipes: Recipe[];
-}
+import {RecipeSearchProps} from "../interfaces/RecipeSearchProps";
 
 const RecipeSearch: React.FC<RecipeSearchProps> = ({recipes}) => {
     const [searchTerm, setSearchTerm] = useState('');

@@ -1,4 +1,4 @@
-export type asPathText = {
+export interface asPathText {
     asPath: string
     text: string
 }

@@ -1,13 +1,11 @@
 import React, {ReactNode} from "react";
 import Link from "next/link";
 import Envelope from "../../../public/icons/circle-envelope-solid.svg"
+import {asPath} from "../../../interfaces/asPath";
 
-type Props = {
-    asPath: string
-}
 const base_url = process.env.BASE_URL;
 
-const Mail = ({asPath}: Props) => (
+const Mail = ({asPath}: asPath) => (
     <div>
         <Link href={"https://www.facebook.com/sharer/sharer.php?u=" + base_url + asPath}>
             {"https://www.facebook.com/sharer/sharer.php?u=" + base_url + asPath}

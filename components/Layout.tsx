@@ -1,14 +1,10 @@
 import React, {ReactNode} from 'react'
 import Head from 'next/head'
 import Socials from "./Socials";
+import {ChildrenTitle} from "../interfaces/ChildrenTitle";
 
 
-type Props = {
-    children?: ReactNode
-    title?: string
-}
-
-const Layout = ({children, title = 'Cookbook'}: Props) => (
+const Layout = ({children, title = 'Cookbook'}: ChildrenTitle) => (
     <div>
         <Head>
             <title>{title}</title>

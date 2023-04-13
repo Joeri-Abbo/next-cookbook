@@ -1,14 +1,11 @@
 import React, {ReactNode} from "react";
 import Link from "next/link";
 import DownloadIcon from "../../../public/icons/download-solid.svg"
+import {asPathText} from "../../../interfaces/asPathText";
 
-type Props = {
-    asPath: string
-    text: string
-}
 const base_url = process.env.BASE_URL;
 
-const Download = ({asPath, text}: Props) => (
+const Download = ({asPath, text}: asPathText) => (
     <div>
         <Link href={"whatsapp://send?text=" + base_url + asPath + text}>
             {"whatsapp://send?text=" + base_url + asPath + text}

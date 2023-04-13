@@ -1,17 +1,12 @@
 import {GetStaticProps} from 'next';
-import {Recipe} from '../interfaces/Recipe';
 import {getAllRecipes} from '../lib/recipes';
 import Link from "next/link";
 import slugify from "slugify";
 import RecipeSearch from '../components/RecipeSearch';
 import Layout from "../components/Layout";
-import Image from "next/image";
 import LazyImage from "../components/LazyImage";
+import {HomeProps} from "../interfaces/HomeProps";
 
-interface HomeProps {
-    recipes: Recipe[];
-    categories: string[];
-}
 
 export default function Home({recipes, categories}: HomeProps) {
     return (

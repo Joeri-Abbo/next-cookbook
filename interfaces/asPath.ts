@@ -1,3 +1,3 @@
-export type asPath = {
+export interface asPath {
     asPath: string
 }

@@ -1,13 +1,11 @@
 import React, {ReactNode} from "react";
 import Link from "next/link";
 import PintrestIcon from "../../../public/icons/pinterest.svg"
+import {asPath} from "../../../interfaces/asPath";
 
-type Props = {
-    asPath: string
-}
 const base_url = process.env.BASE_URL;
 
-const Pintrest = ({asPath}: Props) => (
+const Pintrest = ({asPath}: asPath) => (
     <div>
         <Link href={"https://www.facebook.com/sharer/sharer.php?u=" + base_url + asPath}>
             {"https://www.facebook.com/sharer/sharer.php?u=" + base_url + asPath}

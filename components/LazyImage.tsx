@@ -1,7 +1,6 @@
 import {useEffect, useRef, useState} from 'react';
 import {LazyImageProps} from "../interfaces/LazyImage";
 
-
 const LazyImage: React.FC<LazyImageProps> = ({src, alt, className}) => {
     const [loadedSrc, setLoadedSrc] = useState<string | null>(null);
     const imgRef = useRef<HTMLImageElement | null>(null);

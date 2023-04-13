@@ -1,13 +1,11 @@
 import React, {ReactNode} from "react";
 import Link from "next/link";
 import FacebookIcon from "../../../public/icons/facebook.svg"
+import {asPath} from "../../../interfaces/asPath";
 
-type Props = {
-    asPath: string
-}
 const base_url = process.env.BASE_URL;
 
-const Facebook = ({asPath}: Props) => (
+const Facebook = ({asPath}: asPath) => (
     <div>
         <Link href={"https://www.facebook.com/sharer/sharer.php?u=" + base_url + asPath}>
             {"https://www.facebook.com/sharer/sharer.php?u=" + base_url + asPath}

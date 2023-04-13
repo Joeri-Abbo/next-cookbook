@@ -1,6 +1,6 @@
 import {ReactNode} from "react";
 
-export type ChildrenTitle = {
+export interface ChildrenTitle {
     children?: ReactNode
     title?: string
 }
