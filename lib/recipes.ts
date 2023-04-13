@@ -76,3 +76,32 @@ export function getCategories(): Set<string> {
 
     return new Set(recipes.map((recipe) => recipe.category));
 }
+
+export function getTags(): string[] {
+    const recipes = getAllRecipes();
+    const tags = [];
+    recipes.forEach((recipe) => {
+        if (recipe.tags && recipe.tags.length > 0) {
+            recipe.tags.forEach((tag) => {
+                tags.push(tag)
+            })
+        }
+    })
+    return tags;
+}
+
+export function getRecipesByTag(tagFilter: string): Recipe[] {
+    const recipeAll = getAllRecipes();
+
+    let recipes = []
+    recipeAll.forEach(
+        (recipe) => {
+            recipe.tags.forEach((tag) => {
+                if (slugify(tag, {lower: true}) === tagFilter) {
+                    recipes.push(recipe)
+                }
+            })
+        }
+    )
+    return recipes
+}

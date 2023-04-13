@@ -1,14 +1,11 @@
 import {GetStaticProps} from 'next';
 import {getAllRecipes} from '../lib/recipes';
-import Link from "next/link";
-import slugify from "slugify";
 import Search from '../components/Recipe/Search';
 import Layout from "../components/Layout";
-import LazyImage from "../components/Utilities/LazyImage";
-import {HomeProps} from "../interfaces/Pages/HomeProps";
+import {RecipesProps} from "../interfaces/Pages/RecipesProps";
 
 
-export default function Home({recipes, categories}: HomeProps) {
+export default function Recipes({recipes}: RecipesProps) {
     return (
         <Layout>
             <h1 className="text-4xl text-center	">Recipes</h1>
@@ -19,11 +16,9 @@ export default function Home({recipes, categories}: HomeProps) {
 
 export const getStaticProps: GetStaticProps = async () => {
     const recipes = getAllRecipes();
-    const categories = Array.from(new Set(recipes.map((recipe) => recipe.category)));
 
     return {
         props: {
-            categories,
             recipes,
         },
     };
