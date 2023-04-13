@@ -30,7 +30,7 @@
   "type": "main",
   "preparationTime": 15,
   "bakingTime": "11",
-  "description": "Description",
+  "description": "Description\n\ntester!",
   "intro": "Intro",
   "outro": "Outro"
 }
