@@ -11,6 +11,7 @@ import {RecipeDetailPageProps} from "../../../interfaces/RecipeDetailPageProps";
 import Layout from "../../../components/Layout";
 import Card from "../../../components/Recipe/card";
 import React from "react";
+import Cards from "../../../components/Recipe/cards";
 
 
 export default function RecipeDetailPage({recipe, categoryName, relatedRecipes}: RecipeDetailPageProps) {
@@ -54,12 +55,8 @@ export default function RecipeDetailPage({recipe, categoryName, relatedRecipes}:
                 ))}
             </ul>
             <Share asPath={router.asPath} text={"hallo"}/>
+            <Cards recipes={relatedRecipes}/>
 
-            <ul className="list-disc">
-                {relatedRecipes && relatedRecipes.map((recipe, key) => (
-                    <Card recipe={recipe}/>
-                ))}
-            </ul>
         </Layout>
     );
 }

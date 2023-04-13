@@ -4,6 +4,7 @@ import slugify from "slugify";
 import LazyImage from "./LazyImage";
 import {RecipeSearchProps} from "../interfaces/RecipeSearchProps";
 import Card from "./Recipe/card";
+import Cards from "./Recipe/cards";
 
 const RecipeSearch: React.FC<RecipeSearchProps> = ({recipes}) => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -22,11 +23,7 @@ const RecipeSearch: React.FC<RecipeSearchProps> = ({recipes}) => {
                 className="text-5xl focus:outline-none text-center w-full"
                 onChange={(e) => setSearchTerm(e.target.value)}
             />
-            <div className="mt-4 grid grid-cols-2 flex-col-reverse gap-4 md:grid-cols-2 lg:grid-cols-4">
-                {filteredRecipes.map((recipe) => (
-                    <Card recipe={recipe}/>
-                ))}
-            </div>
+            <Cards recipes={filteredRecipes}/>
         </div>
     );
 };
