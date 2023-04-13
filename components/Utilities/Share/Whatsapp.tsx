@@ -8,7 +8,7 @@ const base_url = process.env.BASE_URL;
 const Whatsapp = ({asPath, text}: asPathText) => (
     <div>
         <Link href={`whatsapp://send?text=${base_url}${asPath} ${text}`}>
-            <WhatsappIcon className="w-6 h-6 hover:scale-125 transform-gpu fill-green-600 cursor-pointer"/>
+            <WhatsappIcon className="h-6 w-6 transform-gpu cursor-pointer fill-green-600 hover:scale-125"/>
         </Link>
     </div>
 );

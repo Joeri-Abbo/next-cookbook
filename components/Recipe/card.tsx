@@ -6,7 +6,7 @@ import {card} from "../../interfaces/Recipe/Card";
 import Cards from "../tags/cards";
 
 const Card = ({recipe}: card) => (
-    <div className="p-4 rounded shadow-md hover:shadow-lg transition-shadow duration-200">
+    <div className="rounded p-4 shadow-md transition-shadow duration-200 hover:shadow-lg">
         <Link
             key={recipe.id}
             href={`/recipe/${slugify(recipe.category, {
@@ -19,10 +19,10 @@ const Card = ({recipe}: card) => (
                 <LazyImage
                     src={recipe.imageUrl}
                     alt={recipe.title}
-                    className="w-full h-64 object-cover rounded-t"
+                    className="h-64 w-full rounded-t object-cover"
                 />
                 <Cards tags={recipe.tags}/>
-                <div className="text-xl font-semibold mt-2 mb-1">
+                <div className="mb-1 mt-2 text-xl font-semibold">
                     {recipe.title}
                 </div>
                 {recipe.description && (

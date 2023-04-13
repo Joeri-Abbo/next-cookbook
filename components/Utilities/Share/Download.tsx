@@ -24,7 +24,7 @@ const Download = ({asPath, text}: asPathText) => {
     return (
         <div>
             <Link href="#" onClick={downloadPDF}>
-                <DownloadIcon className="w-6 h-6 hover:scale-125 transform-gpu fill-blue-500 cursor-pointer"/>
+                <DownloadIcon className="h-6 w-6 transform-gpu cursor-pointer fill-blue-500 hover:scale-125"/>
             </Link>
         </div>
     );

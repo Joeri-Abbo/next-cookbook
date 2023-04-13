@@ -26,21 +26,21 @@ export default function RecipeDetailPage({
     return (
         <Layout title={recipe.title}>
             <article>
-                <h1 className="text-4xl font-bold mb-4">{recipe.title}</h1>
-                <p className="text-lg mb-6">{recipe.description}</p>
-                <p className="text-xl mb-6">{recipe.intro}</p>
-                <p className="text-xl mb-6">{recipe.outro}</p>
-                <h2 className="text-2xl font-semibold mb-2">
+                <h1 className="mb-4 text-4xl font-bold">{recipe.title}</h1>
+                <p className="mb-6 text-lg">{recipe.description}</p>
+                <p className="mb-6 text-xl">{recipe.intro}</p>
+                <p className="mb-6 text-xl">{recipe.outro}</p>
+                <h2 className="mb-2 text-2xl font-semibold">
                     Category: {categoryName}
                 </h2>
-                <h3 className="text-xl mb-2">Type: {recipe.type}</h3>
-                <h3 className="text-xl mb-2">
+                <h3 className="mb-2 text-xl">Type: {recipe.type}</h3>
+                <h3 className="mb-2 text-xl">
                     Preparation Time: {recipe.preparationTime}
                 </h3>
-                <h3 className="text-xl mb-6">Baking Time: {recipe.bakingTime}</h3>
+                <h3 className="mb-6 text-xl">Baking Time: {recipe.bakingTime}</h3>
 
-                <h3 className="text-2xl font-semibold mb-2">Ingredients:</h3>
-                <ul className="list-disc list-inside mb-6">
+                <h3 className="mb-2 text-2xl font-semibold">Ingredients:</h3>
+                <ul className="mb-6 list-inside list-disc">
                     {recipe.ingredients &&
                         recipe.ingredients.map((item, key) => (
                             <li key={key} className="mb-1">
@@ -49,8 +49,8 @@ export default function RecipeDetailPage({
                         ))}
                 </ul>
 
-                <h3 className="text-2xl font-semibold mb-2">Instructions:</h3>
-                <ol className="list-decimal list-inside mb-6">
+                <h3 className="mb-2 text-2xl font-semibold">Instructions:</h3>
+                <ol className="mb-6 list-inside list-decimal">
                     {recipe.instructions &&
                         recipe.instructions.map((item, key) => (
                             <li key={key} className="mb-1">
@@ -58,12 +58,12 @@ export default function RecipeDetailPage({
                             </li>
                         ))}
                 </ol>
-                <h3 className="text-2xl font-semibold mb-2">Tags:</h3>
+                <h3 className="mb-2 text-2xl font-semibold">Tags:</h3>
                 <ul className="list-none">
                     {recipe.tags &&
                         recipe.tags.map((tag, key) => (
                             <li key={key}
-                                className="inline-block bg-blue-500 text-white text-xs font-bold py-1 px-2 rounded-full mr-1 mb-1">
+                                className="mb-1 mr-1 inline-block rounded-full bg-blue-500 px-2 py-1 text-xs font-bold text-white">
                                 {tag}
                             </li>
                         ))}
@@ -71,7 +71,7 @@ export default function RecipeDetailPage({
             </article>
             <Share asPath={router.asPath} text={'hallo'}/>
             <div className="mt-8">
-                <h2 className="text-3xl font-bold mb-4">Related Recipes:</h2>
+                <h2 className="mb-4 text-3xl font-bold">Related Recipes:</h2>
                 <Cards recipes={relatedRecipes}/>
             </div>
         </Layout>

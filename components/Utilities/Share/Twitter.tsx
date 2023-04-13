@@ -8,7 +8,7 @@ const base_url = process.env.BASE_URL;
 const Twitter = ({asPath, text}: asPathText) => (
     <div>
         <Link href={`https://twitter.com/intent/tweet?text=${text}&url=${base_url}${asPath}`}>
-            <TwitterIcon className="w-6 h-6 hover:scale-125 transform-gpu fill-blue-500 cursor-pointer"/>
+            <TwitterIcon className="h-6 w-6 transform-gpu cursor-pointer fill-blue-500 hover:scale-125"/>
         </Link>
     </div>
 );

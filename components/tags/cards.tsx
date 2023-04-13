@@ -5,7 +5,7 @@ import Card from "./card";
 const Cards = ({tags}: CardsProps) => (
     <>
         {tags && (
-            <ul className="list-disc list-inside flex flex-wrap gap-1 mt-2 mb-2">
+            <ul className="mb-2 mt-2 flex list-inside list-disc flex-wrap gap-1">
                 {tags.map((tag, key) => (
                     <li key={key} className="inline">
                         <Card tag={tag}/>

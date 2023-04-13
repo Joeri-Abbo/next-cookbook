@@ -8,7 +8,7 @@ const base_url = process.env.BASE_URL;
 const Mail = ({asPath}: asPath) => (
     <div>
         <Link href={`mailto:?subject=Check this out&body=${base_url}${asPath}`}>
-            <Envelope className="w-6 h-6 hover:scale-125 transform-gpu fill-blue-500 cursor-pointer"/>
+            <Envelope className="h-6 w-6 transform-gpu cursor-pointer fill-blue-500 hover:scale-125"/>
         </Link>
     </div>
 );
