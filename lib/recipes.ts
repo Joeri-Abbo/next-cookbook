@@ -33,7 +33,7 @@ export function getRecipeBySlug(category: string, slug: string): Recipe | null {
     const allRecipes = getAllRecipes();
     const recipe = allRecipes.find(
         (recipe) =>
-            recipe.category === category &&
+            slugify(recipe.category, {lower: true}) === category &&
             slugify(recipe.title, {lower: true}) === slug
     );
     return recipe || null;
@@ -68,4 +68,11 @@ export function getRecipesByRelatedByIdAndCategory(id: number, category: string)
     return getRecipesByCategory(slugify(category, {lower: true})).filter(
         (r) => r.id !== id
     )
+}
+
+export function getCategories(): Set<string> {
+
+    const recipes = getAllRecipes();
+
+    return new Set(recipes.map((recipe) => recipe.category));
 }

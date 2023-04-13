@@ -1,6 +1,6 @@
 import {GetStaticPaths, GetStaticProps} from 'next';
 import {useRouter} from 'next/router';
-import {getAllRecipes, getRecipesByCategory} from '../../lib/recipes';
+import {getAllRecipes, getCategories, getRecipesByCategory} from '../../lib/recipes';
 import slugify from "slugify";
 import Search from "../../components/Recipe/Search";
 import Layout from "../../components/Layout";
@@ -23,9 +23,8 @@ export default function CategoryPage({recipes, categoryName}: CategoryPageProps)
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const recipes = getAllRecipes();
-
-    const categories = new Set(recipes.map((recipe) => recipe.category));
+    const categories = getCategories()
+    // TODO this also for detail of recipe
     const paths = Array.from(categories).map((category) => ({
         params: {slugifiedCategory: encodeURIComponent(slugify(category, {lower: true}))},
     }));

@@ -8,7 +8,9 @@ const Card = ({recipe}: card) => (
     <div className="bg-amber-500">
         <Link
             key={recipe.id}
-            href={`/recipe/${encodeURIComponent(recipe.category)}/${slugify(recipe.title, {
+            href={`/recipe/${slugify(recipe.category, {
+                lower: true,
+            })}/${slugify(recipe.title, {
                 lower: true,
             })}`}
         >

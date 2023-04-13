@@ -3,9 +3,11 @@ import slugify from "slugify";
 import LazyImage from "../Utilities/LazyImage";
 import React from "react";
 import {Card} from "../../interfaces/Category/Card";
+import {random} from "nanoid";
 
 const Card = ({category}: Card) => (
     <Link
+        key={random(20).toString()}
         href={`/category/${encodeURIComponent(
             slugify(category, {lower: true})
         )}`}

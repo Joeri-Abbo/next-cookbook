@@ -66,7 +66,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
     const paths = recipes.map((recipe) => ({
         params: {
-            category: encodeURIComponent(recipe.category),
+            category: encodeURIComponent(slugify(recipe.category, {lower: true})),
             slug: encodeURIComponent(slugify(recipe.title, {lower: true})),
         },
     }));
