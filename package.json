@@ -10,7 +10,7 @@
     "test:watch": "jest --watchAll"
   },
   "dependencies": {
-    "@svgr/webpack": "^7.0.0",
+    "@svgr/webpack": "^8.0.1",
     "html2pdf.js": "^0.10.1",
     "next": "latest",
     "react": "^18.2.0",
