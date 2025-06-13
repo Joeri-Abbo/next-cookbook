@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@svgr/webpack": "^8.1.0",
-    "html2pdf.js": "^0.10.1",
+    "html2pdf.js": "^0.10.3",
     "next": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
