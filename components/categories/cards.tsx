@@ -1,5 +1,5 @@
 import React from "react";
-import {Cards} from "../../interfaces/Category/Cards";
+import type {Cards} from "../../interfaces/Category/Cards";
 import Card from "./card";
 
 const Cards = ({categories}: Cards) => (

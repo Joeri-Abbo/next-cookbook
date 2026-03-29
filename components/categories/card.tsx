@@ -2,7 +2,7 @@ import Link from "next/link";
 import slugify from "slugify";
 import LazyImage from "../Utilities/LazyImage";
 import React from "react";
-import {Card} from "../../interfaces/Category/Card";
+import type {Card} from "../../interfaces/Category/Card";
 import {random} from "nanoid";
 
 const Card = ({category}: Card) => (
